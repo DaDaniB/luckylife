@@ -3,6 +3,7 @@ export type ResultOption = {
     label: string;
     probability: number;
     invalidatedBy?: string[];
+    description?: string;
   };
   
   export type QuestionNode = {

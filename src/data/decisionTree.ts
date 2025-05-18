@@ -5,9 +5,10 @@ export const decisionTree: QuestionNode[] = [
     id: "q1",
     question: "What's your favorite color?",
     options: [
-      { id: "red", label: "Red", probability: 0.3 },
-      { id: "blue", label: "Blue", probability: 0.5 },
-      { id: "green", label: "Green", probability: 0.2 },
+      { id: "red", label: "Red", probability: 0.3, description: 'this is red' },
+      { id: "blue", label: "Blue", probability: 0.5, description: 'this is bluee' },
+      { id: "green", label: "Green", probability: 0.2, description: 'green is this' },
+      { id: "yellow", label: "Yellow", probability: 0.6, description: 'and that is yellow' }
     ],
   },
   {
