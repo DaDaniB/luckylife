@@ -4,8 +4,10 @@ html, body, #root {
     margin: 0;
     padding: 0;
     font-family: 'Segoe UI', sans-serif;
-    background: linear-gradient(to bottom right, #dbeafe, #f3e8ff);
+    background: #fcfcfe;
     color: #333;
+    overflow: hidden;
+    box-sizing: border-box;
   }
   
   h1, h2, h3 {

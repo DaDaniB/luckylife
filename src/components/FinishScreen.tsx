@@ -1,4 +1,5 @@
 import type { Decision } from "../types";
+import './FinishScreen.css'
 
 type Props = {
   decisions: Decision[];
@@ -11,7 +12,7 @@ export const FinishScreen = ({ decisions }: Props) => {
 
   return (
     <div className="p-8 text-center">
-      <h2 className="text-2xl font-semibold mb-4">All Done!</h2>
+      <h2 className="finish-header">All Done!</h2>
       <p className="mb-4">Here's a summary of your choices:</p>
       <ul className="mb-4">
         {decisions.map((d, i) => (

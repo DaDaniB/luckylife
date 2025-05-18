@@ -6,6 +6,7 @@ import { QuestionScreen } from "./components/QuestionScreen";
 import { FinishScreen } from "./components/FinishScreen";
 import { DecisionFooter } from "./components/DecisionFooter";
 import { useInactivityTimer } from "./hooks/useInactivityTimer";
+import './App.css'
 
 const App = () => {
   const [step, setStep] = useState(0);
@@ -25,14 +26,14 @@ const App = () => {
 
   const inProgress = step > 0 && step <= decisionTree.length;
   const showRestart = decisions.length > 0;
-  const showFooter = decisions.length > 0;
+  const showFooter = decisions.length > 0 && decisions.length < decisionTree.length;
 
   return (
-    <div className="min-h-screen flex flex-col justify-between relative">
+    <div className="base-wrapper">
       {showRestart && (
         <button
           onClick={restart}
-          className="absolute top-4 right-4 bg-red-500 text-white px-3 py-1 rounded z-10"
+          className="restart-btn"
         >
           Restart
         </button>
