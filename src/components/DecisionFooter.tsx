@@ -1,9 +1,10 @@
 import type { Decision } from "../types";
+import './DecisionFooter.css'
 
 type Props = { decisions: Decision[] };
 
 export const DecisionFooter = ({ decisions }: Props) => (
-  <div className="fixed bottom-0 w-full bg-gray-100 p-4 border-t">
+  <div className="decision-list">
     <strong>Decisions:</strong>{" "}
     {decisions.map(d => d.resultLabel).join(" → ")}
   </div>

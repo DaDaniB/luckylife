@@ -18,6 +18,8 @@ export const SlotMachine = ({ options, previousResults, onResult }: Props) => {
     useRef<HTMLDivElement>(null),
     useRef<HTMLDivElement>(null),
     useRef<HTMLDivElement>(null),
+    useRef<HTMLDivElement>(null),
+    useRef<HTMLDivElement>(null),
   ];
 
   const getValidOptions = (): ResultOption[] =>

@@ -1,5 +1,6 @@
 import type { QuestionNode, Decision } from "../types";
 import { SlotMachine } from "./SlotMachine";
+import './QuestionScreen.css'
 
 type Props = {
   question: QuestionNode;
@@ -8,8 +9,8 @@ type Props = {
 };
 
 export const QuestionScreen = ({ question, decisions, onNext }: Props) => (
-  <div className="p-8">
-    <h2 className="text-2xl font-semibold mb-4">{question.question}</h2>
+  <div className="p-8 question-wrapper">
+    <h2 className="question-text">{question.question}</h2>
     <SlotMachine
       options={question.options}
       previousResults={decisions.map(d => d.resultId)}
