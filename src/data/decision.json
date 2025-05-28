@@ -160,10 +160,12 @@
               "answer": "Deine Familie erbt überraschend eine größere Summe."
             },
             {
-              "answer": "Wegen den Folgen eines Erdbebens ist deine Familie gezwungen einen ungünstigen Kredit aufzunehmen."
+              "answer": "Wegen den Folgen eines Erdbebens ist deine Familie gezwungen einen ungünstigen Kredit aufzunehmen.",
+              "includes": ["Du wirst in ärmliche Verhältnisse hineingeboren."]
             },
             {
-              "answer": "Ihr seid auf staatliche Unterstützung angewiesen."
+              "answer": "Ihr seid auf staatliche Unterstützung angewiesen.",
+              "excludes": ["Deine Familie ist wohlhabend und verfügt über Rücklagen."]
             },
             {
               "answer": "Es ändert sich nichts."
