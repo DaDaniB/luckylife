@@ -1,6 +1,6 @@
-:root {
-  --fade-duration: 300ms;
-}
+/* :root {
+  --fade-duration: 3000ms;
+} */
 
 
 /* src/index.css */
@@ -37,7 +37,7 @@ html, body, #root {
 
 .result-line {
   background-color: black;
-  display: none;
+
 }
 
   

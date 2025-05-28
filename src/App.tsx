@@ -6,6 +6,7 @@ import ResultPage from './components/ResultPage';
 import FinalPage from './components/FinalPage';
 import GlobalUI from './components/GlobalUI';
 import TransitionWrapper from './components/TransitionWrapper';
+import { FADE_DURATION_MS } from './constants/animation';
 
 const AppContent: React.FC = () => {
   const { state } = useAppContext();
@@ -24,6 +25,8 @@ const AppContent: React.FC = () => {
         return null;
     }
   };
+
+  document.documentElement.style.setProperty('--fade-duration', `${FADE_DURATION_MS}ms`);
 
   return (
     <>

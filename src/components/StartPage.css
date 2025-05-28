@@ -36,6 +36,7 @@
   position: absolute;
   bottom: 0;
   font-size: 1.5rem;
+  z-index: 999;
 }
 
 .auge-img-container {

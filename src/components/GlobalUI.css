@@ -3,17 +3,18 @@
   top: 0;
   left: 0;
   z-index: 1;
+  transition: var(--fade-duration) ease;
 }
 
 
 .line {
   background-color: black;
   position: absolute;
-  transition: 300ms;
+  transition: var(--fade-duration) ease;
 }
 
 .vertical-line {
-  height: 100%;
+  height: 100vh;
   width: 0.1rem;
 }
 
@@ -44,4 +45,19 @@
 
 #h2 {
   top: 66%;
+}
+
+.fade-out {
+  opacity: 0;
+  transition: opacity var(--fade-duration) ease;
+}
+
+.move-up {
+  transform: translateY(-10rem);
+  transition: transform var(--fade-duration) ease;
+}
+
+.move-down {
+  transform: translateY(10rem);
+  transition: transform var(--fade-duration) ease;
 }

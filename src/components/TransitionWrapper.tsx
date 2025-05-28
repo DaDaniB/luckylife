@@ -25,7 +25,7 @@ const TransitionWrapper: React.FC<Props> = ({ children, stateKey }) => {
     const timeout = setTimeout(() => {
       setRenderedChildren(children);
       setFadeState('fade-in');
-    }, FADE_DURATION_MS); // Match fade-out duration
+    }, FADE_DURATION_MS / 2); // Match fade-out duration
 
     return () => clearTimeout(timeout);
   }, [stateKey]);

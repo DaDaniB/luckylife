@@ -6,36 +6,49 @@ const GlobalUI: React.FC = () => {
   const { state } = useAppContext();
 
   useEffect(() => {
-    const ui = document.getElementById('global-ui')
-    if (!ui) {
-      return
-    }
+    const ui = document.getElementById('global-ui');
+    if (!ui) return;
 
-    const defaultBoxClass = "global-ui"
-    
+    const defaultBoxClass = "global-ui";
+
     switch (state) {
-      
       case 'start': {
         ui.className = defaultBoxClass + " start-box";
-        setClassNameOfAllLines("start-line")
+        setClassNameOfAllLines("start-line");
+        resetSpecialAnimations();
         return;
       }
       case 'slot': {
         ui.className = defaultBoxClass + " slot-box";
-        setClassNameOfAllLines("slot-line")
+        setClassNameOfAllLines("slot-line");
+        resetSpecialAnimations();
         return;
       }
       case 'result': {
-        ui.className = defaultBoxClass + " start-box"
-        setClassNameOfAllLines("result-line")
-        return
+        ui.className = defaultBoxClass + " start-box";
+        setClassNameOfAllLines("result-line");
+
+        // special animations
+        document.getElementById('v1')?.classList.add('fade-out');
+        document.getElementById('v2')?.classList.add('fade-out');
+        document.getElementById('h1')?.classList.add('move-up');
+        document.getElementById('h2')?.classList.add('move-down')
+        return;
       }
       case 'final':
+        resetSpecialAnimations();
+        return;
     }
-    
-  })
+  }, [state]);
 
-  const setClassNameOfAllLines = (className:string) => {
+  const resetSpecialAnimations = () => {
+    document.getElementById('v1')?.classList.remove('fade-out');
+    document.getElementById('v2')?.classList.remove('fade-out');
+    document.getElementById('h1')?.classList.remove('move-up');
+    document.getElementById('h2')?.classList.remove('move-down');
+  };
+
+  const setClassNameOfAllLines = (className: string) => {
     const defaultLineClass = "line"
     const verticalLines = document.getElementsByClassName("vertical-line")
     const horizontalLines = document.getElementsByClassName("horizontal-line")
@@ -48,8 +61,8 @@ const GlobalUI: React.FC = () => {
     for (let i = 0; i < elements.length; i++) {
       elements[i].className = className;
     }
-    
-  } 
+
+  }
 
   return (
     <div id="global-ui" className="global-ui">

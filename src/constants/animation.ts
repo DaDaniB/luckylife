@@ -1,1 +1,1 @@
-export const FADE_DURATION_MS = 300;
+export const FADE_DURATION_MS = 1500;
