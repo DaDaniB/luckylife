@@ -32,7 +32,7 @@ const ResultPage: React.FC = () => {
         setAnswers({ ...answers, [question.question]: randomAnswer.answer });
         index++;
 
-        if (randomAnswer.endFlow) {
+        if (randomAnswer.endflow) {
           shownAllQARef.current = true
           setIsEndEarly(true)
           clearInterval(interval)
@@ -45,6 +45,7 @@ const ResultPage: React.FC = () => {
     }, 1000); // Delay between displaying each Q&A
 
     const handleKeyPress = (event: KeyboardEvent) => {
+      resetTimer()
       if (event.key === KEY && shownAllQARef.current) {
         handleNext()
       }
