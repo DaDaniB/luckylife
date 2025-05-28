@@ -1,0 +1,17 @@
+.global-ui {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  padding: 8px 16px;
+  background: rgba(0, 0, 0, 0.75);
+  color: white;
+  font-size: 14px;
+  display: flex;
+  justify-content: space-between;
+  z-index: 1000;
+}
+
+.state-indicator {
+  font-weight: bold;
+}

@@ -1,0 +1,33 @@
+.slot-machine {
+  text-align: center;
+}
+
+.slot-container {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  margin-top: 20px;
+}
+
+.wheel {
+  width: 80px;
+  overflow: hidden;
+  border: 2px solid #000;
+  position: relative;
+}
+
+.image-strip {
+  position: absolute;
+  left: 0;
+  top: 0;
+  will-change: transform;
+}
+
+.image-item {
+  height: 80px;
+  width: 100%;
+  font-size: 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}

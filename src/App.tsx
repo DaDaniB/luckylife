@@ -1,65 +1,35 @@
-import { useState } from "react";
-import { decisionTree } from "./data/decisionTree";
-import type { Decision } from "./types";
-import { StartScreen } from "./components/StartScreen";
-import { QuestionScreen } from "./components/QuestionScreen";
-import { FinishScreen } from "./components/FinishScreen";
-import { DecisionFooter } from "./components/DecisionFooter";
-import { useInactivityTimer } from "./hooks/useInactivityTimer";
-import './App.css'
+import React from 'react';
+import { AppProvider } from './context/AppContext';
+import StartPage from './components/StartPage';
+import SlotMachinePage from './components/SlotMachinePage';
+import ResultPage from './components/ResultPage';
+import FinalPage from './components/FinalPage';
+import GlobalUI from './components/GlobalUI';
 
-const App = () => {
-  const [step, setStep] = useState(0);
-  const [decisions, setDecisions] = useState<Decision[]>([]);
+import { useAppContext } from './context/AppContext';
 
-  const restart = () => {
-    setStep(0);
-    setDecisions([]);
-  };
+const AppContent: React.FC = () => {
+  const { state } = useAppContext();
 
-  const handleNext = (decision: Decision) => {
-    setDecisions([...decisions, decision]);
-    setStep(step + 1);
-  };
-
-  const inactivityWarning = useInactivityTimer(restart);
-
-  const inProgress = step > 0 && step <= decisionTree.length;
-  const showRestart = decisions.length > 0;
-  const showFooter = decisions.length > 0 && decisions.length < decisionTree.length;
-
-  return (
-    <div className="base-wrapper">
-      {showRestart && (
-        <button
-          onClick={restart}
-          className="restart-btn"
-        >
-          Restart
-        </button>
-      )}
-
-      {inactivityWarning && (
-        <div className="fixed top-0 left-0 w-full text-center bg-yellow-300 py-2 font-bold z-10">
-          No activity detected. Returning to start soon...
-        </div>
-      )}
-
-      {step === 0 ? (
-        <StartScreen onStart={() => setStep(1)} />
-      ) : step <= decisionTree.length ? (
-        <QuestionScreen
-          question={decisionTree[step - 1]}
-          decisions={decisions}
-          onNext={handleNext}
-        />
-      ) : (
-        <FinishScreen decisions={decisions} />
-      )}
-
-      {showFooter && <DecisionFooter decisions={decisions} />}
-    </div>
-  );
+  switch (state) {
+    case 'start':
+      return <StartPage />;
+    case 'slot':
+      return <SlotMachinePage />;
+    case 'result':
+      return <ResultPage />;
+    case 'final':
+      return <FinalPage />;
+    default:
+      return null;
+  }
 };
+
+const App: React.FC = () => (
+  <AppProvider>
+    <GlobalUI />
+    <AppContent />
+  </AppProvider>
+);
 
 export default App;

@@ -1,0 +1,67 @@
+{
+  "sections": [
+    {
+      "title": "Personal Preferences",
+      "questions": [
+        {
+          "question": "What is your favorite color?",
+          "answers": [
+            { "answer": "Red" },
+            { "answer": "Green" },
+            { "answer": "Blue" }
+          ]
+        },
+        {
+          "question": "What is your favorite animal?",
+          "answers": [
+            { "answer": "Cat", "excludes": ["Red"] },
+            { "answer": "Dog", "includes": ["Blue"] },
+            { "answer": "Elephant" }
+          ]
+        }
+      ]
+    },
+    {
+      "title": "Hobbies and Lifestyle",
+      "questions": [
+        {
+          "question": "What is your preferred activity?",
+          "answers": [
+            { "answer": "Reading" },
+            { "answer": "Sports", "excludes": ["Cat"] },
+            { "answer": "Gaming", "includes": ["Blue"] }
+          ]
+        },
+        {
+          "question": "What is your diet preference?",
+          "answers": [
+            { "answer": "Vegetarian" },
+            { "answer": "Vegan", "excludes": ["Elephant"] },
+            { "answer": "Omnivore" }
+          ]
+        }
+      ]
+    },
+    {
+      "title": "Travel and Leisure",
+      "questions": [
+        {
+          "question": "What is your ideal vacation?",
+          "answers": [
+            { "answer": "Beach" },
+            { "answer": "Mountains", "includes": ["Reading"] },
+            { "answer": "City" }
+          ]
+        },
+        {
+          "question": "Preferred mode of travel?",
+          "answers": [
+            { "answer": "Car" },
+            { "answer": "Plane", "excludes": ["Dog"] },
+            { "answer": "Train" }
+          ]
+        }
+      ]
+    }
+  ]
+}
