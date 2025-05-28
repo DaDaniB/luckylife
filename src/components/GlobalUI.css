@@ -1,0 +1,63 @@
+.global-ui {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 1;
+  transition: var(--fade-duration) ease;
+}
+
+
+.line {
+  background-color: black;
+  position: absolute;
+  transition: var(--fade-duration) ease;
+}
+
+.vertical-line {
+  height: 100vh;
+  width: 0.1rem;
+}
+
+#v1 {
+  left: 20%;
+}
+
+#v2 {
+  left: 40%;
+}
+
+#v3 {
+  left: 60%;
+}
+
+#v4 {
+  left: 80%;
+}
+
+.horizontal-line {
+  height: 0.2rem;
+  width: 100%;
+}
+
+#h1 {
+  top: 33%;
+}
+
+#h2 {
+  top: 66%;
+}
+
+.fade-out {
+  opacity: 0;
+  transition: opacity calc(var(--fade-duration) / 2) ease;
+}
+
+.move-up {
+  transform: translateY(-10rem);
+  transition: transform var(--fade-duration) ease;
+}
+
+.move-down {
+  transform: translateY(10rem);
+  transition: transform var(--fade-duration) ease;
+}

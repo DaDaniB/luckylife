@@ -1,21 +1,20 @@
-export type ResultOption = {
-    id: string;
-    label: string;
-    probability: number;
-    invalidatedBy?: string[];
-    description?: string;
-  };
-  
-  export type QuestionNode = {
-    id: string;
-    question: string;
-    options: ResultOption[];
-  };
-  
-  export type Decision = {
-    questionId: string;
-    questionText: string;
-    resultId: string;
-    resultLabel: string;
-  };
-  
+export interface Answer {
+  answer: string;
+  includes?: string[];  // Answers that must be selected before this one is valid
+  excludes?: string[];  // Answers that must NOT be selected for this to be valid
+  endflow?: boolean;
+}
+
+export interface Question {
+  question: string;
+  answers: Answer[];
+}
+
+export interface Section {
+  title: string;
+  questions: Question[];
+}
+
+export interface DecisionTree {
+  sections: Section[];
+}
