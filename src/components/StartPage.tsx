@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useEffect} from 'react';
 import { useAppContext } from '../context/AppContext';
 import './StartPage.css';
 
@@ -7,11 +7,29 @@ import AugeImg from '../../imgs/AUGEN.jpg'
 import PeopleImg from '../../imgs/RANDOM PEOPLE.jpg'
 import PTLSVG from '../../imgs/PLAY THROUGH LIFE.svg'
 import StarSVG from '../../imgs/STERN.svg'
+import { KEY } from '../constants/animation';
 
 const StartPage: React.FC = () => {
-  const { setState } = useAppContext();
+  const { setState, resetTimer } = useAppContext();
+
+  useEffect(() => {
+    const handleKeyPress = (event: KeyboardEvent) => {
+      if (event.key === KEY) {
+        handleStart()
+      }
+    }
+
+    window.addEventListener('keydown', handleKeyPress);
+
+    return () => {
+      window.removeEventListener('keydown', handleKeyPress)
+    }
+  })
+
+
 
   const handleStart = () => {
+    resetTimer()
     setState('slot');
   };
 
@@ -41,9 +59,7 @@ const StartPage: React.FC = () => {
         <p id="wjbdTEXT">wieviele jackpots brauchst du?</p>
       </div>
       <img className="ptl-img" src={PTLSVG} alt="play through life" />
-      <button className="start-button" onClick={handleStart}>
-        Start
-      </button>
+
     </div>
   );
 

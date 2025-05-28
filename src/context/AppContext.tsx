@@ -2,7 +2,7 @@ import React, { createContext, useContext, useEffect, useState, useRef } from 'r
 import type { ReactNode } from 'react'
 
 
-const TIMEOUT = 6000000
+const TIMEOUT = 60000
 
 type AppState = 'start' | 'slot' | 'result' | 'final';
 
@@ -13,6 +13,8 @@ interface AppContextProps {
   setCurrentSectionIndex: (index: number) => void;
   answers: Record<string, string>;
   setAnswers: (answers: Record<string, string>) => void;
+  resetTimer: () => void;
+  resetStateMachine: () => void;
 }
 
 const AppContext = createContext<AppContextProps | undefined>(undefined);
@@ -67,7 +69,8 @@ export const AppProvider: React.FC<AppProviderProps> = ({ children }) => {
     setCurrentSectionIndex,
     answers,
     setAnswers,
-    resetTimer // 🔥 expose this to components
+    resetTimer,
+    resetStateMachine
   };
 
   return (

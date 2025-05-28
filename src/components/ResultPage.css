@@ -18,6 +18,7 @@
 .answerbox {
   margin-top: 13vh;
   font-size: 1.3rem;
+  max-width: 60%;
 }
 
 .answerbox div {

@@ -1,4 +1,4 @@
-import React, { useEffect, useRef, useState } from 'react';
+import React, { useEffect, useRef, useState, useCallback } from 'react';
 import './SlotMachinePage.css';
 import { useAppContext } from '../context/AppContext';
 import BezierEasing from 'bezier-easing'
@@ -10,6 +10,7 @@ import bell from '../../imgs/BELL PIXEL.png'
 import horse from '../../imgs/HORSE PIXEL.png'
 import star from '../../imgs/STERN.svg'
 import ptsBtn from '../../imgs/PRESS TO SPIN.svg'
+import { KEY } from '../constants/animation';
 
 const IMAGES = [cherry, seven, bar, bell, horse];
 // const FINAL_IMAGE = '⭐';
@@ -38,7 +39,7 @@ interface WheelData {
 }
 
 const SlotMachinePage: React.FC = () => {
-    const { setState } = useAppContext();
+    const { setState, resetTimer } = useAppContext();
     const [wheels, setWheels] = useState<WheelData[]>([]);
     const animationRefs = useRef<(ReturnType<typeof requestAnimationFrame> | null)[]>([]);
 
@@ -63,7 +64,21 @@ const SlotMachinePage: React.FC = () => {
         }));
 
         setWheels(initial);
+
+        const handleKeyPress = (event: KeyboardEvent) => {
+            if (event.key === KEY) {
+                handleSpin()
+            }
+        }
+
+        window.addEventListener('keydown', handleKeyPress);
+
+        return () => {
+            window.removeEventListener('keydown', handleKeyPress)
+        }
     }, []);
+
+
 
     const animateWheel = (wheelIndex: number, duration: number) => {
         const startTime = performance.now();
@@ -93,19 +108,36 @@ const SlotMachinePage: React.FC = () => {
         requestAnimationFrame(animate);
     };
 
-    const handleSpin = () => {
-        if (hasSpun) return;
+    const handleSpin = useCallback(() => {
+        resetTimer();
+        if (hasSpun || wheels.length === 0) return;
+
         setHasSpun(true);
-        document.getElementById("spin-btn")?.classList.remove("spin-btn-toggle")
+        document.getElementById("spin-btn")?.classList.remove("spin-btn-toggle");
 
         wheels.forEach((_, index) => {
             setTimeout(() => {
                 animateWheel(index, SPIN_DURATION);
             }, index * STAGGER_DELAY);
         });
-        const delay = SPIN_DURATION + (STAGGER_DELAY * WHEEL_COUNT) + PAGE_SWITCH_DELAY
+
+        const delay = SPIN_DURATION + (STAGGER_DELAY * WHEEL_COUNT) + PAGE_SWITCH_DELAY;
         setTimeout(() => setState('result'), delay);
-    };
+    }, [resetTimer, hasSpun, wheels, setState]);
+
+    useEffect(() => {
+        if (wheels.length > 0) {
+            const handleKeyPress = (event: KeyboardEvent) => {
+                if (event.key === KEY) {
+                    handleSpin(); 
+                }
+            };
+
+            window.addEventListener('keydown', handleKeyPress);
+            return () => window.removeEventListener('keydown', handleKeyPress);
+        }
+    }, [wheels, handleSpin]);
+
 
     return (
         <div className="slot-machine">
