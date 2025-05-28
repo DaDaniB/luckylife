@@ -1,3 +1,8 @@
+:root {
+  --fade-duration: 300ms;
+}
+
+
 /* src/index.css */
 html, body, #root {
     margin: 0;

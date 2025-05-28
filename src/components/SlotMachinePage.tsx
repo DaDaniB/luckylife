@@ -40,7 +40,8 @@ interface WheelData {
 const SlotMachinePage: React.FC = () => {
     const { setState } = useAppContext();
     const [wheels, setWheels] = useState<WheelData[]>([]);
-    const animationRefs = useRef<ReturnType<typeof requestAnimationFrame>[]>([]);
+    const animationRefs = useRef<(ReturnType<typeof requestAnimationFrame> | null)[]>([]);
+
     const [hasSpun, setHasSpun] = useState(false);
 
     useEffect(() => {
@@ -74,7 +75,6 @@ const SlotMachinePage: React.FC = () => {
             const t = Math.min((currentTime - startTime) / duration, 1);
             const eased = easingFunction(t);
             const position = startY + (targetY - startY) * eased;
-            console.log(position)
 
             setWheels((prev) =>
                 prev.map((wheel, index) =>
@@ -82,7 +82,11 @@ const SlotMachinePage: React.FC = () => {
                 )
             );
 
-            animationRefs.current[wheelIndex] = requestAnimationFrame(animate);
+            if (t < 1) {
+                animationRefs.current[wheelIndex] = requestAnimationFrame(animate);
+            } else {
+                animationRefs.current[wheelIndex] = null;
+            }
 
         };
 
