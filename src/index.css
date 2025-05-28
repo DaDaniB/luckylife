@@ -1,32 +1,38 @@
 /* src/index.css */
 html, body, #root {
-    height: 100%;
     margin: 0;
     padding: 0;
-    font-family: 'Segoe UI', sans-serif;
+    width: 100vw;
+    height: 100vh;
+    font-family: 'Neue Haas Grotesk', 'Helvetica Neue', Helvetica, Arial, sans-serif;
     background: #fcfcfe;
-    color: #333;
+    color: #000000;
     overflow: hidden;
-    box-sizing: border-box;
   }
+
   
-  h1, h2, h3 {
-    font-weight: bold;
-  }
-  
-  button {
-    cursor: pointer;
-    border: none;
-    border-radius: 8px;
-    padding: 1rem 2rem;
-    font-size: 1.2rem;
-    background-color: #2563eb;
-    color: white;
-    transition: background-color 0.2s, transform 0.2s;
-  }
-  
-  button:hover {
-    background-color: #1e40af;
-    transform: scale(1.05);
-  }
+.start-box {
+  width: 100%;
+  height: 100%;
+}
+
+.slot-box {
+  width: calc(100% - 4rem);
+  height: calc(93% - 4rem);
+  margin: 2rem;
+}
+
+.start-line {
+  background-color: black;
+}
+
+.slot-line {
+  background-color: white;
+}
+
+.result-line {
+  background-color: black;
+  display: none;
+}
+
   

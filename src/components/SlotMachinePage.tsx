@@ -3,20 +3,31 @@ import './SlotMachinePage.css';
 import { useAppContext } from '../context/AppContext';
 import BezierEasing from 'bezier-easing'
 
-const IMAGES = ['🍒', '🍋', '🔔', '⭐', '7️⃣'];
+import cherry from '../../imgs/CHERRY PIXEL.png'
+import seven from '../../imgs/7 PIXEL.png'
+import bar from '../../imgs/BAR PIXEL.png'
+import bell from '../../imgs/BELL PIXEL.png'
+import horse from '../../imgs/HORSE PIXEL.png'
+import star from '../../imgs/STERN.svg'
+import ptsBtn from '../../imgs/PRESS TO SPIN.svg'
+
+const IMAGES = [cherry, seven, bar, bell, horse];
 // const FINAL_IMAGE = '⭐';
 const WHEEL_COUNT = 5;
 const IMAGES_PER_WHEEL = 30;
-const IMAGE_HEIGHT = 80;
-const SPIN_DURATION = 18;
-const STAGGER_DELAY = 300;
-const DISPLAYED_IMAGES_COUNT = 3
-const WHEEL_HEIGHT = DISPLAYED_IMAGES_COUNT * IMAGE_HEIGHT
-const WHEEL_STRIP_OFFSET = -(IMAGE_HEIGHT * IMAGES_PER_WHEEL) + WHEEL_HEIGHT
 
-// Cubic easing for acceleration/deceleration
-// const easeInOutCubic = (t: number) =>
-//     t < 0.5 ? 4 * t * t * t : 1 - Math.pow(-2 * t + 2, 3) / 2;
+const SPIN_DURATION = 3000;
+const STAGGER_DELAY = 200;
+const PAGE_SWITCH_DELAY = 2000
+const DISPLAYED_IMAGES_COUNT = 3
+const DISPLAYED_IMAGE_HEIGHT = (1 / DISPLAYED_IMAGES_COUNT) * 100 // 0.3 -> 30...%
+
+const IMAGE_STRIP_HEIGHT = DISPLAYED_IMAGE_HEIGHT * IMAGES_PER_WHEEL
+const IMAGE_HEIGHT = (1 / IMAGES_PER_WHEEL) * 100
+const WHEEL_STRIP_OFFSET = ((IMAGES_PER_WHEEL - DISPLAYED_IMAGES_COUNT) / IMAGES_PER_WHEEL) * 100
+
+
+
 const easingFunction = BezierEasing(.08, .37, .82, 1.06);
 
 interface WheelData {
@@ -57,13 +68,13 @@ const SlotMachinePage: React.FC = () => {
         const startTime = performance.now();
 
         const startY = 0;
-        const targetIndex = IMAGES_PER_WHEEL - DISPLAYED_IMAGES_COUNT
-        const targetY = targetIndex * IMAGE_HEIGHT;
+        const targetY = WHEEL_STRIP_OFFSET
 
         const animate = (currentTime: number) => {
             const t = Math.min((currentTime - startTime) / duration, 1);
             const eased = easingFunction(t);
             const position = startY + (targetY - startY) * eased;
+            console.log(position)
 
             setWheels((prev) =>
                 prev.map((wheel, index) =>
@@ -81,42 +92,44 @@ const SlotMachinePage: React.FC = () => {
     const handleSpin = () => {
         if (hasSpun) return;
         setHasSpun(true);
+        document.getElementById("spin-btn")?.classList.remove("spin-btn-toggle")
 
         wheels.forEach((_, index) => {
             setTimeout(() => {
                 animateWheel(index, SPIN_DURATION);
             }, index * STAGGER_DELAY);
         });
-        const delay = SPIN_DURATION + (STAGGER_DELAY * WHEEL_COUNT) + 500
+        const delay = SPIN_DURATION + (STAGGER_DELAY * WHEEL_COUNT) + PAGE_SWITCH_DELAY
         setTimeout(() => setState('result'), delay);
     };
 
     return (
         <div className="slot-machine">
-            <h2>Spinning for Section...</h2>
-            <div className="slot-container">
+            <div className="slot-container slot-box">
                 {wheels.map((wheel) => (
-                    <div key={wheel.id} className="wheel" style={{
-                        height: `${WHEEL_HEIGHT}px`
-                    }}>
+                    <div key={wheel.id} className="wheel">
                         <div
                             className="image-strip"
                             style={{
-                                transform: `translateY(${wheel.offsetY + WHEEL_STRIP_OFFSET}px)`
+                                transform: `translateY(${wheel.offsetY - WHEEL_STRIP_OFFSET}%)`,
+                                height: `${IMAGE_STRIP_HEIGHT}%`
                             }}
                         >
                             {wheel.images.map((img, idx) => (
-                                <div key={idx} className="image-item">
-                                    {img}
+                                <div key={idx} className="image-item" style={{
+                                    height: `${IMAGE_HEIGHT}%`
+                                }}>
+                                    <img src={img} alt="slot-item" />
                                 </div>
                             ))}
                         </div>
                     </div>
                 ))}
             </div>
-            <button onClick={handleSpin} disabled={wheels.some((w) => w.spinning)}>
-                Spin
+            <button id='spin-btn' className='spin-btn spin-btn-toggle' onClick={handleSpin} disabled={wheels.some((w) => w.spinning)}>
+                <img src={ptsBtn} alt="press to spin" />
             </button>
+            <img src={star} alt="stern" />
         </div>
     );
 };

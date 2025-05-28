@@ -4,6 +4,8 @@ import { getFilteredAnswers } from '../utils/decisionUtils';
 import decisionDataRaw from '../data/decision.json';
 import type { DecisionTree } from '../types';
 import './ResultPage.css'
+import peopleImg from '../../imgs/RANDOM PEOPLE.jpg'
+import star from '../../imgs/STERN.svg'
 
 const decisionData: DecisionTree = decisionDataRaw;
 
@@ -43,14 +45,27 @@ const ResultPage: React.FC = () => {
   };
 
   return (
-    <div>
-      <h2>Results</h2>
-      {displayedQA.map((qa, idx) => (
-        <div key={idx}>
-          <strong>{qa.question}</strong>: {qa.answer}
+    <div className='resultpage'>
+      <div className="title">{decisionData.sections[currentSectionIndex]?.title || "Age"}</div>
+      <div className="answerbox">
+        {displayedQA.map((qa, idx) => (
+          <div key={idx}>
+            <strong>{qa.question}</strong><br /> {qa.answer}
+          </div>
+        ))}
+      </div>
+      <div className="img-box">
+        <div className="people-img-box">
+          <img className='people-img' src={peopleImg} alt="random people" />
+          <img className='people-img' src={peopleImg} alt="random people" />
+          <img className='people-img' src={peopleImg} alt="random people" />
         </div>
-      ))}
-      <button onClick={handleNext}>Next</button>
+        
+        <img id="result-star-1" className='star-img' src={star} alt="stern" />
+        <img id="result-star-2" className='star-img' src={star} alt="stern" />
+      </div>
+
+      <button id="result-next-btn" onClick={handleNext}>Next</button>
       <div className="progress-bar-container">
         <div
           className="progress-bar-fill"

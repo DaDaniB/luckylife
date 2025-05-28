@@ -2,16 +2,46 @@
   position: fixed;
   top: 0;
   left: 0;
-  width: 100%;
-  padding: 8px 16px;
-  background: rgba(0, 0, 0, 0.75);
-  color: white;
-  font-size: 14px;
-  display: flex;
-  justify-content: space-between;
-  z-index: 1000;
+  z-index: 1;
 }
 
-.state-indicator {
-  font-weight: bold;
+
+.line {
+  background-color: black;
+  position: absolute;
+  transition: 300ms;
+}
+
+.vertical-line {
+  height: 100%;
+  width: 0.1rem;
+}
+
+#v1 {
+  left: 20%;
+}
+
+#v2 {
+  left: 40%;
+}
+
+#v3 {
+  left: 60%;
+}
+
+#v4 {
+  left: 80%;
+}
+
+.horizontal-line {
+  height: 0.2rem;
+  width: 100%;
+}
+
+#h1 {
+  top: 33%;
+}
+
+#h2 {
+  top: 66%;
 }

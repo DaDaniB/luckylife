@@ -2,7 +2,7 @@ import React, { createContext, useContext, useEffect, useState, useRef } from 'r
 import type { ReactNode } from 'react'
 
 
-const TIMEOUT = 60000
+const TIMEOUT = 6000000
 
 type AppState = 'start' | 'slot' | 'result' | 'final';
 
