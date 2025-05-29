@@ -35,6 +35,20 @@
   color: red;
 }
 
+.result-text-cursor {
+  animation: blink 1s infinite;
+  width: 1.1rem;
+  height: 1.1rem;
+  margin: 0;
+  margin-left: -0.7rem;
+  padding: 0;
+}
+
+.result-qa div {
+  margin: 0;
+  padding: 0
+}
+
 .img-box {
   position: absolute;
   top: 0;
@@ -111,3 +125,8 @@
   
 }
 
+@keyframes blink {
+  0% { opacity: 1; }
+  50% { opacity: 0; }
+  100% { opacity: 1; }
+}

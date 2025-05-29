@@ -7,20 +7,16 @@
           "question": "Wohnort",
           "answers": [
             {
-              "answer": "Du wirst in einem Land mit hoher Kindersterblichkeit geboren.",
-              "endflow": true
+              "answer": "Du wirst in einem Land mit hoher Kindersterblichkeit geboren."
             },
             {
-              "answer": "Du kommst in einem Land mit stabiler Infrastruktur zur Welt.",
-              "endflow": true
+              "answer": "Du kommst in einem Land mit stabiler Infrastruktur zur Welt."
             },
             {
-              "answer": "Du wirst in unmittelbarer Nähe zu einem modernen Spital geboren.",
-              "endflow": true
+              "answer": "Du wirst in unmittelbarer Nähe zu einem modernen Spital geboren."
             },
             {
-              "answer": "Du wirst in einer lauten, dichten Großstadt geboren.",
-              "endflow": true
+              "answer": "Du wirst in einer lauten, dichten Großstadt geboren."
             },
             {
               "answer": "Du wirst in einer abgelegenen, ländlichen Region geboren."
@@ -127,8 +123,7 @@
           "question": "Schicksalsschläge / Zufälle",
           "answers": [
             {
-              "answer": "Bei dir wird direkt nach der Geburt eine unheilbare Krankheit festgestellt.",
-              "endflow": true
+              "answer": "Bei dir wird direkt nach der Geburt eine unheilbare Krankheit festgestellt."
             },
             {
               "answer": "Deine Familie erhält durch einen Zufall ein großes Erbe."
