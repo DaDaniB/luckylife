@@ -7,6 +7,7 @@ import './ResultPage.css';
 import peopleImg from '../../imgs/RANDOM PEOPLE.jpg';
 import star from '../../imgs/STERN.svg';
 import { KEY } from '../constants/animation';
+import cursor from '../../imgs/cursor.png'
 
 const decisionData: DecisionTree = decisionDataRaw;
 
@@ -71,18 +72,23 @@ const ResultPage: React.FC = () => {
             setCurrentText((prev) => prev + fullText[charIndex]);
             charIndex++;
           } else {
-            clearInterval(interval);
-            setDisplayedQA((prev) => [...prev, { question: nextQA.question, answer: fullText, isEnd: nextQA.isEnd }]);
-            setAnswers((prev) => ({
-              ...prev,
-              [nextQA.question]: fullText
-            }));
+            setTimeout(() => {
+              clearInterval(interval);
+              setDisplayedQA((prev) => [...prev, { question: nextQA.question, answer: fullText, isEnd: nextQA.isEnd }]);
+              setAnswers((prev) => ({
+                ...prev,
+                [nextQA.question]: fullText
+              }));
 
-            setIsTyping(false);
-            setTimeout(() => { setDisplayIndex((prev) => prev + 1); }, 500)
+              setIsTyping(false);
+              setDisplayIndex((prev) => prev + 1);
+
+            }, 500)
+            clearInterval(interval);
+            return
           }
         }, 30);
-      }, 500)
+      }, 700)
 
       return () => clearInterval(interval);
     } else if (fullAnswerList.length > 0) {
@@ -113,6 +119,7 @@ const ResultPage: React.FC = () => {
   }, [currentText]);
 
   const handleNext = () => {
+    console.log(`early end? ${isEndEarly}`)
     if (currentSectionIndex + 1 < decisionData.sections.length && !isEndEarly) {
       setCurrentSectionIndex(currentSectionIndex + 1);
       setState('slot');
@@ -126,13 +133,26 @@ const ResultPage: React.FC = () => {
       <div className="title">{decisionData.sections[currentSectionIndex]?.title || "Age"}</div>
       <div className="answerbox" ref={answerBoxRef}>
         {displayedQA.map((qa, idx) => (
-          <div className={qa.isEnd ? 'ending-text' : 'something'} key={idx}>
-            <strong>{qa.question}</strong><br /> {qa.answer}
+          <div className='result-qa' key={idx}>
+            <strong>
+              {qa.question}
+              </strong>
+              <br /> 
+              <span className={qa.isEnd ? 'ending-text' : ''}> 
+                {qa.answer} 
+              </span>
           </div>
         ))}
         {isTyping && (
-          <div>
-            <strong>{fullAnswerList[displayIndex]?.question}</strong><br /> {currentText}
+          <div className='result-qa' >
+            <strong>
+              {fullAnswerList[displayIndex]?.question}
+            </strong>
+            <br />
+            <span className={fullAnswerList[displayIndex].isEnd ? 'ending-text' : ''}>
+              {currentText}
+            </span>
+            <img className='result-text-cursor' src={cursor} alt="cursor" />
           </div>
         )}
       </div>
