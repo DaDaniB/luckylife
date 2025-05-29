@@ -7,16 +7,20 @@
           "question": "Wohnort",
           "answers": [
             {
-              "answer": "Du wirst in einem Land mit hoher Kindersterblichkeit geboren."
+              "answer": "Du wirst in einem Land mit hoher Kindersterblichkeit geboren.",
+              "endflow": true
             },
             {
-              "answer": "Du kommst in einem Land mit stabiler Infrastruktur zur Welt."
+              "answer": "Du kommst in einem Land mit stabiler Infrastruktur zur Welt.",
+              "endflow": true
             },
             {
-              "answer": "Du wirst in unmittelbarer Nähe zu einem modernen Spital geboren."
+              "answer": "Du wirst in unmittelbarer Nähe zu einem modernen Spital geboren.",
+              "endflow": true
             },
             {
-              "answer": "Du wirst in einer lauten, dichten Großstadt geboren."
+              "answer": "Du wirst in einer lauten, dichten Großstadt geboren.",
+              "endflow": true
             },
             {
               "answer": "Du wirst in einer abgelegenen, ländlichen Region geboren."
