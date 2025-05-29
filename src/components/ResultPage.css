@@ -21,10 +21,18 @@
   margin-top: 13vh;
   font-size: 1.3rem;
   max-width: 60%;
+  max-height: 50%;
+  overflow-y: auto;
+  transition: 300ms;
+  scrollbar-width: none;
 }
 
 .answerbox div {
   margin: 2rem 0;
+}
+
+.ending-text {
+  color: red;
 }
 
 .img-box {

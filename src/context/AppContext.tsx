@@ -1,5 +1,6 @@
 import React, { createContext, useContext, useEffect, useState, useRef } from 'react';
 import type { ReactNode } from 'react'
+import { RESET_KEY } from '../constants/animation';
 
 
 const TIMEOUT = 60000
@@ -61,6 +62,18 @@ export const AppProvider: React.FC<AppProviderProps> = ({ children }) => {
       if (timeoutRef.current) clearTimeout(timeoutRef.current);
     };
   }, [state]);
+
+    useEffect(() => {
+      const handleReset = (event: KeyboardEvent) => {
+        resetTimer();
+        if (event.key === RESET_KEY) {
+          resetStateMachine();
+        }
+      };
+  
+      window.addEventListener('keydown', handleReset);
+      return () => window.removeEventListener('keydown', handleReset);
+    });
 
   const contextValue = {
     state,
