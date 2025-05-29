@@ -27,6 +27,11 @@ const ResultPage: React.FC = () => {
         const question = filtered[index];
         const i = Math.floor(Math.random() * question.answers.length)
         const randomAnswer = question.answers[i];
+        
+        if (randomAnswer == null) {
+          index++;
+          return
+        }
 
         setDisplayedQA((prev) => [...prev, { question: question.question, answer: randomAnswer.answer }]);
         setAnswers({ ...answers, [question.question]: randomAnswer.answer });

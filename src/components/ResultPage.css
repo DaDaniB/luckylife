@@ -62,11 +62,13 @@
 }
 
 #result-star-1 {
-  top: 20%;
+  top: 15%;
+  left: 9rem;
 }
 
 #result-star-2 {
   top: 80%;
+  left: 9rem;
 }
 
 .star-img {
