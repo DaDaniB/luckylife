@@ -10,7 +10,7 @@ html, body, #root {
     width: 100vw;
     height: 100vh;
     font-family: 'Neue Haas Grotesk', 'Helvetica Neue', Helvetica, Arial, sans-serif;
-    background: #fcfcfe;
+    /* background: #fcfcfe; */
     color: #000000;
     overflow: hidden;
   }
@@ -25,6 +25,8 @@ html, body, #root {
   width: calc(100% - 4rem);
   height: calc(93% - 4rem);
   margin: 2rem;
+  
+  z-index: 1;
 }
 
 .start-line {

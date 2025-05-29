@@ -8,6 +8,8 @@
 
 .title {
   font-size: 3rem;
+  text-transform: uppercase;
+  font-family: "Pixelify Sans", sans-serif;
 }
 
 #result-next-btn {
