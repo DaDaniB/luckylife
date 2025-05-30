@@ -4,35 +4,28 @@
       "title": "Age 0 – Geburt",
       "questions": [
         {
-          "question": "Wohnort",
+          "question": "Geburtsort",
           "answers": [
             {
-              "answer": "Du wirst in einem Land mit hoher Kindersterblichkeit geboren.",
-              "endflow": true
+              "answer": "Du wirst in einem Land mit hoher Kindersterblichkeit geboren."
             },
             {
-              "answer": "Du kommst in einem Land mit stabiler Infrastruktur zur Welt.",
-              "endflow": true
+              "answer": "Deine Geburt fällt in ein Land mit stabiler Infrastruktur!"
             },
             {
-              "answer": "Du wirst in unmittelbarer Nähe zu einem modernen Spital geboren.",
-              "endflow": true
+              "answer": "Du wirst in unmittelbarer Nähe zu einem modernen Spital geboren."
             },
             {
-              "answer": "Du wirst in einer lauten, dichten Großstadt geboren.",
-              "endflow": true
+              "answer": "Du wirst in einer lauten, dichten Großstadt geboren."
             },
             {
-              "answer": "Du wirst in einer abgelegenen, ländlichen Region geboren.",
-              "endflow": true
+              "answer": "Du wirst in einer abgelegenen, ländlichen Region geboren."
             },
             {
-              "answer": "Du wirst mitten in einem aktiven Kriegsgebiet geboren.",
-              "endflow": true
+              "answer": "Du wirst mitten in einem aktiven Kriegsgebiet geboren."
             },
             {
-              "answer": "Du kommst in einem verlassenen Dorf ohne jegliche Infrastruktur zur Welt.",
-              "endflow": true
+              "answer": "Du kommst in einem verlassenen Dorf ohne jegliche Infrastruktur zur Welt."
             }
           ]
         },
@@ -43,7 +36,7 @@
               "answer": "Deine Familie ist wohlhabend und verfügt über Rücklagen."
             },
             {
-              "answer": "Deine Familie lebt in Armut – es fehlt oft an Grundlegendem."
+              "answer": "In eurem Alltag fehlt es oft an Grundlegendem – deine Familie lebt in Armut."
             },
             {
               "answer": "Deine Familie ist sehr vermögend und lebt in einer großen Villa."
@@ -63,7 +56,7 @@
           "question": "Gesundheit",
           "answers": [
             {
-              "answer": "Du kommst leider blind zur Welt."
+              "answer": "Leider wirst du blind geboren."
             },
             {
               "answer": "Bei deiner Geburt wird ein angeborener Herzfehler festgestellt."
@@ -102,10 +95,10 @@
               "answer": "Du wächst mit acht Geschwistern auf."
             },
             {
-              "answer": "Du hast eine ältere Schwester."
+              "answer": "Eine ältere Schwester ist bereits Teil deiner Familie, bevor du zur Welt kommst."
             },
             {
-              "answer": "Du hast einen jüngeren Bruder."
+              "answer": "Ein jüngerer Bruder wächst gemeinsam mit dir auf – manchmal Begleiter, manchmal Rivale."
             }
           ]
         },
@@ -130,7 +123,8 @@
           "question": "Schicksalsschläge / Zufälle",
           "answers": [
             {
-              "answer": "Bei dir wird direkt nach der Geburt eine unheilbare Krankheit festgestellt."
+              "answer": "Bei dir wird direkt nach der Geburt eine unheilbare Krankheit festgestellt.",
+              "endflow": true
             },
             {
               "answer": "Deine Familie erhält durch einen Zufall ein großes Erbe."
@@ -166,12 +160,13 @@
               "answer": "Deine Familie erbt überraschend eine größere Summe."
             },
             {
-              "answer": "Wegen den Folgen eines Erdbebens ist deine Familie gezwungen einen ungünstigen Kredit aufzunehmen.",
-              "includes": ["Du wirst in ärmliche Verhältnisse hineingeboren."]
+              "answer": "Wegen den Folgen eines Erdbebens ist deine Familie gezwungen einen ungünstigen Kredit aufzunehmen."
             },
             {
-              "answer": "Ihr seid auf staatliche Unterstützung angewiesen.",
-              "excludes": ["Deine Familie ist wohlhabend und verfügt über Rücklagen."]
+              "answer": "Ihr seid auf staatliche Unterstützung angewiesen",
+              "includes": [
+                "Deine Familie ist stark verschuldet."
+              ]
             },
             {
               "answer": "Es ändert sich nichts."
@@ -188,31 +183,31 @@
               "answer": "Du bist körperlich und geistig gesund."
             },
             {
-              "answer": "Du musst lernen mit völliger Blindheit zu leben."
+              "answer": "Du musst lernen mit völliger Blindheit zu leben.",
+              "includes": [
+                "Leider wirst du blind geboren."
+              ]
             },
             {
-              "answer": ""
+              "answer": "Schwere Allergien machen den Alltag zu einer ständigen Herausforderung."
             },
             {
-              "answer": "Du entwickelst schwere Allergien, die dazu führen, dass der Alltag für dich zum Kampf wird."
-            },
-            {
-              "answer": "Du bist taub – Sprache erlernst du nur mit Hilfsmitteln."
+              "answer": "Du wirst taub – Sprache erlernst du nur mit Hilfsmitteln."
             },
             {
               "answer": "Ein angeborener Herzfehler macht regelmäßige Behandlungen notwendig."
             },
             {
-              "answer": "Du leidest unter chronischen Schmerzen."
+              "answer": "Chronische Schmerzen begleiten das Aufwachsen – mal unterschwellig, mal überwältigend."
             },
             {
-              "answer": "Dein Immunsystem ist ungewöhnlich stark – du bist kaum je krank."
+              "answer": "Dein Immunsystem ist ungewöhnlich stark – du bist kaum krank."
             },
             {
-              "answer": "Körperlich läuft alles stabil – du entwickelst dich gut."
+              "answer": "Dein Körper ist gesund – du entwickelst dich gut."
             },
             {
-              "answer": "Du bekommst eine heftige Lungenentzündung. Die medizinische Infrastruktur in deinem Land ist sehr schlecht und die Ursache wird nicht rechtzeitig erkannt.",
+              "answer": "Du bekommst eine starke Lungenentzündung. Die medizinische Infrastruktur in deinem Land ist zu schlecht und die Ursache wird nicht rechtzeitig erkannt.",
               "endflow": true
             }
           ]
@@ -224,7 +219,10 @@
               "answer": "Deiner Familie geht es gut, ihr habt ein stabiles Verhältnis."
             },
             {
-              "answer": "Du lebst im Waisenhaus, du hast ein Dach über dem Kopf, aber niemand kümmerst sich wirklich um dich."
+              "answer": "Das Leben im Waisenhaus bietet ein Dach über dem Kopf, aber emotionale Nähe bleibt ein Fremdwort.",
+              "includes": [
+                "Du bist ein Waisenkind – deine Mutter ist bei der Geburt gestorben und hast deinen Vater nie kennengelernt."
+              ]
             },
             {
               "answer": "Ein Familienmitglied wird schwer krank."
@@ -244,10 +242,13 @@
           "question": "Bildung / Ausbildung",
           "answers": [
             {
-              "answer": "Du gehst in eine normale öffentliche Schule."
+              "answer": "Der Besuch einer normalen öffentlichen Schule prägt deinen Bildungsalltag."
             },
             {
-              "answer": "Du besuchst eine teure Privatschule mit exzellentem Angebot."
+              "answer": "Du besuchst eine teure Privatschule mit exzellentem Angebot.",
+              "includes": [
+                "Deine Familie ist sehr vermögend und lebt in einer großen Villa."
+              ]
             },
             {
               "answer": "Du wirst zu Hause unterrichtet."
@@ -273,7 +274,7 @@
               "answer": "In deinem Umfeld eskaliert ein bewaffneter Konflikt."
             },
             {
-              "answer": "Dein Land entwickelt sich zur Diktatur."
+              "answer": "Die politische Entwicklung nimmt eine autoritäre Wendung – Freiheit wird zunehmend zur Erinnerung."
             }
           ]
         },
@@ -281,16 +282,16 @@
           "question": "Schicksalsschläge / Zufälle",
           "answers": [
             {
-              "answer": "Du wirst sehr krank und musst lange im Spital bleiben."
+              "answer": "Eine schwere Krankheit zwingt dich zu einem langen Aufenthalt im Krankenhaus."
             },
             {
-              "answer": "Eine Naturkatastrophe zerstört euer Zuhause. Dabei verliert eine Person, die dir sehr nahesteht, ihr Leben."
+              "answer": "Eine Naturkatastrophe zerstört euer Zuhause. Dabei verliert eine Person, die dir viel bedeutet hat, ihr Leben."
             },
             {
               "answer": "Du findest Geld auf der Straße. Es ist nicht viel aber für dich fühlt es sich an wie ein Vermögen."
             },
             {
-              "answer": "Du verlierst dein Lieblingsspielzeug bei einer Überschwemmung."
+              "answer": "Dein liebstes Spielzeug geht in den Fluten einer Überschwemmung verloren."
             }
           ]
         }
@@ -301,39 +302,54 @@
       "questions": [
         {
           "question": "Wohnort",
-          "answers": []
-        },
-        {
-          "question": "SELBES LAND:",
           "answers": [
             {
-              "answer": "Die innenpolitische Lage bleibt weiterhin stabil."
+              "answer": "Dein Heimatland gerät in eine tiefe Wirtschaftskrise.",
+              "excludes": [
+                "Deine Glaubensrichtung wird politisch verfolgt, ihr müsst fliehen – das neue Land ist noch unbekannt."
+              ]
             },
             {
-              "answer": "Dein Heimatland gerät in eine tiefe Wirtschaftskrise."
+              "answer": "In deinem Land herrscht ein anhaltender oder eskalierender Krieg.",
+              "excludes": [
+                "Deine Glaubensrichtung wird politisch verfolgt, ihr müsst fliehen – das neue Land ist noch unbekannt."
+              ]
             },
             {
-              "answer": "In deinem Land herrscht ein anhaltender oder eskalierender Krieg."
+              "answer": "Du erlebst offen geäußerte Hetze gegen deine Herkunft oder Religion.",
+              "excludes": [
+                "Deine Glaubensrichtung wird politisch verfolgt, ihr müsst fliehen – das neue Land ist noch unbekannt."
+              ]
             },
             {
-              "answer": "Du erlebst offen geäußerte Hetze gegen deine Herkunft oder Religion."
-            }
-          ]
-        },
-        {
-          "question": "ANDERES LAND:",
-          "answers": [
-            {
-              "answer": "Du bist aus deiner Heimat geflohen, euer Asylantrag wird bewilligt – ihr dürft dauerhaft bleiben."
+              "answer": "Die innenpolitische Lage bleibt weiterhin stabil.",
+              "excludes": [
+                "Deine Glaubensrichtung wird politisch verfolgt, ihr müsst fliehen – das neue Land ist noch unbekannt."
+              ]
             },
             {
-              "answer": "Du bist aus deiner Heimat geflohen, euer Asylantrag wird endgültig abgelehnt – ihr müsst wieder zurück."
+              "answer": "Nach der Flucht wird euer Asylantrag bewilligt – ein dauerhaftes Bleiberecht markiert den Anfang eines neuen Kapitels.",
+              "includes": [
+                "In deinem Umfeld wird offen gegen deine Herkunft oder Religion gehetzt. Ihr überlegt auszuwandern."
+              ]
             },
             {
-              "answer": "Du bist aus deiner Heimat geflohen, du bekommst Unterstützung vom neuen Heimatland – neue Chancen tun sich auf."
+              "answer": "Du bist aus deiner Heimat geflohen, euer Asylantrag wird endgültig abgelehnt – ihr müsst wieder zurück.",
+              "includes": [
+                "In deinem Umfeld wird offen gegen deine Herkunft oder Religion gehetzt. Ihr überlegt auszuwandern."
+              ]
             },
             {
-              "answer": "Du bist aus deiner Heimat geflohen, obwohl ihr bleiben dürft, hast du keine Perspektive – trotz aller Bemühungen sind die Hürden sind zu groß."
+              "answer": "Du bist aus deiner Heimat geflohen, du bekommst Unterstützung vom neuen Heimatland – neue Chancen tun sich auf.",
+              "includes": [
+                "In deinem Umfeld wird offen gegen deine Herkunft oder Religion gehetzt. Ihr überlegt auszuwandern."
+              ]
+            },
+            {
+              "answer": "Du bist aus deiner Heimat geflohen, obwohl ihr bleiben dürft, hast du keine Perspektive – trotz aller Bemühungen sind die Hürden sind zu groß.",
+              "includes": [
+                "In deinem Umfeld wird offen gegen deine Herkunft oder Religion gehetzt. Ihr überlegt auszuwandern."
+              ]
             }
           ]
         },
@@ -350,7 +366,16 @@
               "answer": "Du lebst bei einem alleinerziehenden Elternteil mit begrenzten Mitteln."
             },
             {
-              "answer": "Deine Familie ist wohlhabend – du musst dir keine Sorgen machen."
+              "answer": "Deine Familie ist wohlhabend – du musst dir keine Sorgen machen.",
+              "excludes": [
+                "Ihr seid auf staatliche Unterstützung angewiesen."
+              ]
+            },
+            {
+              "answer": "Deine Familie ist sehr vermögend und lebt in einer großen Villa.",
+              "excludes": [
+                "Ihr seid auf staatliche Unterstützung angewiesen."
+              ]
             },
             {
               "answer": "Ihr seid auf Sozialleistungen angewiesen."
@@ -376,7 +401,7 @@
               "answer": "Du bist körperlich sehr fit – trainierst oder machst regelmäßig Sport."
             },
             {
-              "answer": "Du entwickelst eine starke psychische Erkrankung ."
+              "answer": "Du entwickelst eine starke psychische Erkrankung (z. B. Depression, Psychose)."
             },
             {
               "answer": "Dein Immunsystem ist überdurchschnittlich stark – du wirst kaum krank."
@@ -433,25 +458,34 @@
           "question": "Job / Karriere",
           "answers": [
             {
-              "answer": "Du wirst überraschend zur/zum Manager*in befördert."
+              "answer": "Du wirst überraschend zur/zum Manager*in befördert.",
+              "excludes": [
+                "Du musst lernen mit völliger Blindheit zu leben."
+              ]
             },
             {
-              "answer": "Du versuchst dich als freischaffender Künstlerin – das Einkommen ist instabil."
+              "answer": "Du versuchst dich als freischaffender Künstlerin – das Einkommen ist instabil.",
+              "excludes": [
+                "Du musst lernen mit völliger Blindheit zu leben."
+              ]
             },
             {
               "answer": "Du arbeitest unter schlechten Bedingungen in einer Fabrik."
             },
             {
-              "answer": "Du bekommst einen Job im Ausland – international tätig."
-            },
-            {
-              "answer": "Du gründest ein eigenes Start-up – riskant, aber spannend."
+              "answer": "Du gründest ein eigenes Start-up – riskant, aber spannend.",
+              "excludes": [
+                "Du musst lernen mit völliger Blindheit zu leben."
+              ]
             },
             {
               "answer": "Du wechselst mehrmals den Beruf – aus Unsicherheit oder Notwendigkeit."
             },
             {
-              "answer": "Aufgrund deiner Blindheit hast du keine Möglichkeiten für Job/Karriere, du siehst dich nur als Belastung für dein Umfeld."
+              "answer": "Aufgrund deiner Blindheit hast du keine Möglichkeiten für Job/Karriere, du siehst dich nur als Belastung für dein Umfeld.",
+              "includes": [
+                "Du musst lernen mit völliger Blindheit zu leben."
+              ]
             }
           ]
         },
@@ -465,7 +499,7 @@
               "answer": "Du heiratest jung – vielleicht zu jung."
             },
             {
-              "answer": "Du verlobst dich – voller Hoffnung oder aus gesellschaftlichem Druck."
+              "answer": "Glückwunsch, du hast dich verlobt!"
             },
             {
               "answer": "Deine Beziehung wird durch politische Umstände zur Fernbeziehung."
@@ -494,7 +528,7 @@
               "answer": "Deine Familie erhält staatliche Förderungen."
             },
             {
-              "answer": "Es herrscht Krieg, du wirst eingezogen und stirbst wie tausende andere durch einen Luftangriff. .",
+              "answer": "Es herrscht Krieg, du wirst eingezogen und stirbst wie tausende andere durch einen Luftangriff.",
               "endflow": true
             },
             {
@@ -515,7 +549,7 @@
           "question": "Schicksalsschläge / Zufälle",
           "answers": [
             {
-              "answer": "Du wirst wegen eines Racheaktes erschossen. Der Täter hatte dich mit einer anderen Person verwechselt. .",
+              "answer": "Du wirst wegen eines Racheaktes erschossen. Der Täter hatte dich mit einer anderen Person verwechselt.",
               "endflow": true
             },
             {
@@ -551,10 +585,6 @@
       "questions": [
         {
           "question": "Wohnort",
-          "answers": []
-        },
-        {
-          "question": "Wenn du im selben Land bleibst:",
           "answers": [
             {
               "answer": "Die innenpolitische Lage ist stabil – du spürst eine gewisse Sicherheit."
@@ -570,12 +600,7 @@
             },
             {
               "answer": "Die politische Lage bleibt unübersichtlich – nichts scheint verlässlich."
-            }
-          ]
-        },
-        {
-          "question": "Wenn du in ein anderes Land gezogen bist:",
-          "answers": [
+            },
             {
               "answer": "Euer Asylantrag wird endgültig abgelehnt – ihr müsst zurück."
             },
@@ -606,7 +631,10 @@
               "answer": "Du bekommst ein Erbe – unerwartet und hilfreich."
             },
             {
-              "answer": "Dank deiner Familie bist du vermögend – dein Lebensstil ist sorgenfrei."
+              "answer": "Dank deiner Familie bist du vermögend – dein Lebensstil ist sorgenfrei.",
+              "includes": [
+                "Deine Familie unterstützt dich aktiv – auch materiell."
+              ]
             },
             {
               "answer": "Dein Gehalt liegt unter dem Mindestlohn – du kannst kaum sparen."
@@ -666,19 +694,34 @@
           "question": "Bildung / Ausbildung",
           "answers": [
             {
-              "answer": "Du brichst dein Studium/ deine Berufsschule ab – es ist nicht das Richtige für dich."
+              "answer": "Du besuchst oder beendest ein Studium/ eine Berufsschule.",
+              "excludes": [
+                "Du brichst die Schule vorzeitig ab.",
+                "Du kannst dir den Luxus einer höheren Ausbildung nicht leisten, du musst arbeiten, um das Überleben deiner Familie zu sichern."
+              ]
             },
             {
-              "answer": "Du besuchst oder beendest ein Studium/ eine Berufsschule."
+              "answer": "Du brichst dein Studium/ deine Berufsschule ab – es ist nicht das Richtige für dich.",
+              "excludes": [
+                "Du brichst die Schule vorzeitig ab.",
+                "Du beginnst eine Ausbildung in einem praktischen Beruf.",
+                "Du kannst dir den Luxus einer höheren Ausbildung nicht leisten, du musst arbeiten, um das Überleben deiner Familie zu sichern."
+              ]
             },
             {
-              "answer": "Du erhältst ein Leistungsstipendium – neue Möglichkeiten eröffnen sich."
+              "answer": "Du erhältst ein Leistungsstipendium – neue Möglichkeiten eröffnen sich.",
+              "excludes": [
+                "Du brichst die Schule vorzeitig ab."
+              ]
             },
             {
-              "answer": "Du änderst deinen Weg und beginnst eine praktische Ausbildung."
+              "answer": "Du änderst deinen Weg und beginnst eine praktische Ausbildung.",
+              "excludes": [
+                "Du beginnst eine Ausbildung in einem praktischen Beruf."
+              ]
             },
             {
-              "answer": "Du beginnst eine zusätzliche Aubildung Abends."
+              "answer": "Du beginnst eine zusätzliche Ausbildung Abends."
             }
           ]
         },
@@ -730,7 +773,11 @@
               "answer": "Du lebst in einer stabilen, glücklichen Partnerschaft."
             },
             {
-              "answer": "Du leidest unter einer schmerzhaften Trennung."
+              "answer": "Du leidest unter einer schmerzhaften Trennung.",
+              "excludes": [
+                "Du erlebst tiefe Trauer nach einer Trennung.",
+                "Du verliebst dich – aber es bleibt einseitig."
+              ]
             },
             {
               "answer": "Deine Beziehung wird zur Fernbeziehung – durch Flucht oder Krieg."
@@ -777,15 +824,12 @@
               "answer": "Straßensperren machen den Alltag mühsam und unberechenbar."
             },
             {
-              "answer": "Eine neue Bahnverbindung erleichtert deinen Arbeitsweg."
-            },
-            {
               "answer": "Es herrscht Krieg – wieder oder immer noch."
             }
           ]
         },
         {
-          "question": "Schicksalsschläge / Zfälle",
+          "question": "Schicksalsschläge / Zufälle",
           "answers": [
             {
               "answer": "Du wirst Opfer eines Gewaltverbrechens."
@@ -1029,7 +1073,7 @@
               "answer": "Du erhältst erneut ein Stipendium – dank einer sozialen Reform."
             },
             {
-              "answer": "Du musst dein Land verlassen – die Umstände lassen dir keine Wahl. Du stirbst bei der Flucht. .",
+              "answer": "Du musst dein Land verlassen – die Umstände lassen dir keine Wahl.",
               "endflow": true
             },
             {
@@ -1045,7 +1089,7 @@
               "answer": "Du wirst in die Armee eingezogen."
             },
             {
-              "answer": "Ein Putschversuch eskaliert – dein Wohnhaus wird in Brand gesetzt. Du stirbst. .",
+              "answer": "Ein Putschversuch eskaliert – dein Wohnhaus wird in Brand gesetzt.",
               "endflow": true
             }
           ]
@@ -1084,7 +1128,7 @@
               "answer": "Du gewinnst im Casino – und verlierst alles in einer Woche."
             },
             {
-              "answer": "Ein korrupter Polizist verlangt Geld – du weigerst dich. Er erschießt dich. .",
+              "answer": "Ein korrupter Polizist verlangt Geld – du weigerst dich. Er erschießt dich.",
               "endflow": true
             }
           ]
@@ -1159,32 +1203,63 @@
           "question": "Gesundheit",
           "answers": [
             {
-              "answer": "Deine Allergien verschlechtern sich – selbst einfache Tätigkeiten werden schwierig."
+              "answer": "Deine Allergien verschlechtern sich – selbst einfache Tätigkeiten werden schwierig.",
+              "excludes": [
+                "Dein Herzfehler verschlechtert sich – du brauchst ärztliche Eingriffe."
+              ]
             },
             {
               "answer": "Dein Herzfehler wird gefährlicher – du ignorierst es.",
               "endflow": true
             },
             {
-              "answer": "Die chronischen Schmerzen zwingen dich zur Frühpensionierung."
+              "answer": "Die chronischen Schmerzen zwingen dich zur Frühpensionierung.",
+              "excludes": [
+                "Dein Herzfehler verschlechtert sich – du brauchst ärztliche Eingriffe.",
+                "Du wechselst nach langer Zeit den Beruf – es ist ein kompletter Neustart.",
+                "Du wirst wieder Lehrer*in – nach Jahren in einem anderen Feld.",
+                "Du lebst als freischaffende*r Künstler*in – deine Werke werden kaum verkauft.",
+                "Du bist Beamt*in – deine Aufgaben wurden automatisiert, aber du bleibst.",
+                "Du arbeitest in der Fabrik – Schichtarbeit, Rückenprobleme.",
+                "Du hangelst dich weiter mit Gelegenheitsjobs durch.",
+                "Du wurdest gekündigt weil dein neuer Vorgesetzter dich als Konkurrenz sieht.",
+                "Du wirst Teamleiter*in eines Unternehmens – viel Verantwortung, wenig Schlaf.",
+                "Du gründest ein neues Start-up – das Risiko schreckt dich nicht mehr.",
+                "Du arbeitest erneut international – du lebst aus dem Koffer.",
+                "Du bleibst im selben Job – aber die Aufstiegschancen wurden gestrichen.",
+                "Du arbeitest weiter im selben Job – und wirst endlich befördert.",
+                "Du arbeitest als Grafikdesigner*in – 70-Stunden-Wochen sind normal."
+              ]
             },
             {
-              "answer": "Deine Taubheit wird von Tinnitus begleitet – der Lärm in deinem Kopf nimmt zu."
+              "answer": "Deine Taubheit wird von Tinnitus begleitet – der Lärm in deinem Kopf nimmt zu.",
+              "excludes": [
+                "Dein Herzfehler verschlechtert sich – du brauchst ärztliche Eingriffe."
+              ]
             },
             {
-              "answer": "Du durchlebst eine psychische Krise – du kannst sie nicht mehr ignorieren."
+              "answer": "Du durchlebst eine psychische Krise – du kannst sie nicht mehr ignorieren.",
+              "excludes": [
+                "Dein Herzfehler verschlechtert sich – du brauchst ärztliche Eingriffe."
+              ]
             },
             {
-              "answer": "Dein Asthma zwingt dich regelmäßig ins Krankenhaus."
+              "answer": "Dein Asthma zwingt dich regelmäßig ins Krankenhaus.",
+              "excludes": [
+                "Dein Herzfehler verschlechtert sich – du brauchst ärztliche Eingriffe."
+              ]
             },
             {
-              "answer": "Du erblindest auf einem Auge – ohne erkennbare Ursache."
+              "answer": "Du erblindest auf einem Auge – ohne erkennbare Ursache.",
+              "excludes": [
+                "Dein Herzfehler verschlechtert sich – du brauchst ärztliche Eingriffe."
+              ]
             },
             {
-              "answer": "Dein Immunsystem ist überdurchschnittlich stark ."
-            },
-            {
-              "answer": "Du bist in Topform – du läufst regelmäßig Marathon."
+              "answer": "Dein Immunsystem ist überdurchschnittlich stark.",
+              "excludes": [
+                "Dein Herzfehler verschlechtert sich – du brauchst ärztliche Eingriffe."
+              ]
             }
           ]
         },
@@ -1192,7 +1267,7 @@
           "question": "Familie",
           "answers": [
             {
-              "answer": "Du bist verheiratet – es ist komplizierter als früher."
+              "answer": "Die Ehe hält, aber vieles ist komplizierter geworden."
             },
             {
               "answer": "Du bekommst ein Kind – obwohl du nicht damit gerechnet hast."
@@ -1204,7 +1279,7 @@
               "answer": "Deine Geschwister unterstützen dich – sie bezahlen deine Arztrechnungen."
             },
             {
-              "answer": "Du bekommst dein drittes Kind – es war ein Unfall, aber du liebst es."
+              "answer": "Ein weiteres Kind kommt zur Welt – es war ein Unfall, aber du liebst es."
             }
           ]
         },
@@ -1212,10 +1287,10 @@
           "question": "Bildung / Ausbildung",
           "answers": [
             {
-              "answer": "Du schreibst dich überraschend an einer Berufsschule ein – mit 45."
+              "answer": "Mit 45 Jahren schreibst dich überraschend an einer Berufsschule ein."
             },
             {
-              "answer": "Du hast seit Jahren keine Weiterbildung gemacht – es blieb keine Zeit dafür."
+              "answer": "Seit Jahren bleibt keine Zeit für Weiterbildung – der Alltag lässt wenig Raum."
             }
           ]
         },
@@ -1270,7 +1345,7 @@
               "answer": "Deine Beziehung wird zur Fernbeziehung – aus beruflichen Gründen."
             },
             {
-              "answer": "Du bist verheiratet – ihr führt getrennte Leben unter einem Dach."
+              "answer": "Verheiratet, aber entfremdet: Ihr führt getrennte Leben unter einem Dach."
             },
             {
               "answer": "Du trauerst – deine Partner*in hat dich verlassen."
@@ -1279,7 +1354,7 @@
               "answer": "Du bist geschieden – zum dritten Mal."
             },
             {
-              "answer": "Du bist verliebt – aber die andere Person weiß nichts davon."
+              "answer": "Verliebt, aber ungesehen: Die andere Person weiß nichts davon."
             },
             {
               "answer": "Du lebst in einer gefestigten Partnerschaft – ruhig, vertraut, schön."
@@ -1290,10 +1365,7 @@
           "question": "Infrastruktur / Politik",
           "answers": [
             {
-              "answer": "Du erhältst ein letztes Mal ein staatliches Stipendium – Reform sei Dank."
-            },
-            {
-              "answer": "Du fliehst erneut – diesmal nicht vor Menschen, sondern vor klimabedingten Umweltkatastrophen."
+              "answer": "Erneut zwingen dich die Umstände zur Flucht – diesmal nicht aus politischen Gründen, sondern vor klimabedingten Umweltkatastrophen."
             },
             {
               "answer": "Der Präsident wird gestürzt – die Zukunft des Landes ist unklar."
@@ -1305,10 +1377,10 @@
               "answer": "Der Alltag ist geprägt von Unsicherheit – du hast ständig Vorräte daheim."
             },
             {
-              "answer": "Du wirst ins Militär eingezogen – diesmal als Ausbilder."
+              "answer": "Du wirst ins Militär eingezogen und kannst deine Familie jahrelang nicht sehen."
             },
             {
-              "answer": "Es kommt zu einem gewaltsamen Putschversuch – deine Wohnung brennt. Du stirbst.",
+              "answer": "Es kommt zu einem gewaltsamen Putschversuch – deine Wohnung brennt.",
               "endflow": true
             }
           ]
@@ -1320,16 +1392,16 @@
               "answer": "Du wirst in deiner eigenen Nachbarschaft überfallen und verlierst deinen emotional wertvollsten Gegenstand."
             },
             {
-              "answer": "Du wirst bei einem Auffahrunfall schwer verletzt – du bist nicht schuld."
+              "answer": "Bei einem Auffahrunfall wirst du schwer verletzt – du bist nicht schuld."
             },
             {
               "answer": "Du wirst beinahe überfahren – ein aufmerksamer Passant schubst dich rechtzeitig aus der Gefahrenzone."
             },
             {
-              "answer": "Du wirst mit einer gesuchten Person verwechselt – du verbringst 2 Wochen in Haft."
+              "answer": "Die Behörden verwechseln dich mit einer gesuchten Person – du verbringst 2 Wochen in Haft."
             },
             {
-              "answer": "Du wirst fälschlich wegen Steuerhinterziehung verurteilt."
+              "answer": "Fälschlicherweise wirst du wegen Steuerhinterziehung verurteilt."
             },
             {
               "answer": "Eine wichtige Person in deinem Leben stirbt – es kommt aus dem Nichts."
@@ -1341,13 +1413,13 @@
               "answer": "Ein Erdbeben zerstört deine Stadt – du überlebst knapp."
             },
             {
-              "answer": "Du gewinnst im Lotto – zum zweiten Mal."
+              "answer": "Unglaublich! Du hast im Lotto gewonnen."
             },
             {
               "answer": "Du gewinnst im Casino – es macht dich kurz euphorisch, dann pleite."
             },
             {
-              "answer": "Du erstickst beim Essen an einem Bissen.",
+              "answer": "Beim Essen erstickst du an einem leckeren Bissen Wienerschnitzel.",
               "endflow": true
             },
             {
@@ -1357,7 +1429,7 @@
               "answer": "Du wirst von einem betrunkenen Fahrer überfahren – bleibende Schäden."
             },
             {
-              "answer": "Ein betrunkener Polizist verlangt grundlos Geld von dir – du weigerst dich höflich. Er schießt. Du stirbst.",
+              "answer": "Ein betrunkener Polizist verlangt grundlos Geld von dir – du weigerst dich höflich. Er schießt.",
               "endflow": true
             }
           ]
