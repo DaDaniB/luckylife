@@ -41,19 +41,16 @@ const ResultPage: React.FC = () => {
 
   useEffect(() => {
     const filtered = getFilteredAnswers(currentSectionIndex, answers);
-    const resultList: DisplayedText[] = [];
+    let resultList: DisplayedText[] = [];
 
     filtered.forEach((q) => {
       const i = Math.floor(Math.random() * q.answers.length);
       const a = q.answers[i];
       if (a) {
         resultList.push({ question: q.question, answer: a.answer, isEnd: a.endflow ?? false });
-        if (a.endflow) {
-          setIsEndEarly(true);
-        }
       }
     });
-
+    resultList = handleEarlyEnding(resultList)
     setFullAnswerList(resultList);
   }, [currentSectionIndex]);
 
@@ -118,8 +115,19 @@ const ResultPage: React.FC = () => {
     }
   }, [currentText]);
 
+  const handleEarlyEnding = (answers: DisplayedText[]): DisplayedText[] => {
+    const results: DisplayedText[] = []
+    for (let answer of answers) {
+      results.push(answer)
+      if (answer.isEnd) {
+        setIsEndEarly(true);
+        return results;
+      }
+    }
+    return results;
+  }
+
   const handleNext = () => {
-    console.log(`early end? ${isEndEarly}`)
     if (currentSectionIndex + 1 < decisionData.sections.length && !isEndEarly) {
       setCurrentSectionIndex(currentSectionIndex + 1);
       setState('slot');
@@ -136,11 +144,11 @@ const ResultPage: React.FC = () => {
           <div className='result-qa' key={idx}>
             <strong>
               {qa.question}
-              </strong>
-              <br /> 
-              <span className={qa.isEnd ? 'ending-text' : ''}> 
-                {qa.answer} 
-              </span>
+            </strong>
+            <br />
+            <span className={qa.isEnd ? 'ending-text' : ''}>
+              {qa.answer}
+            </span>
           </div>
         ))}
         {isTyping && (

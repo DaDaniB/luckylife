@@ -21,7 +21,7 @@
 .ptl-img {
   height: 9%;
   margin-top: 2%;
-  animation: toggleVisibility 2s infinite;
+  animation: toggleVisibility 1s infinite;
 }
 
 .img-container {

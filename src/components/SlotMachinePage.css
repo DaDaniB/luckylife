@@ -52,7 +52,7 @@
 }
 
 .spin-btn-toggle {
-  animation: toggleVisibility 2s infinite;
+  animation: toggleVisibility 1s infinite;
 }
 
 .spin-btn:hover {
