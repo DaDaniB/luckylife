@@ -55,6 +55,7 @@
   top: 0;
   left: 0;
   z-index: 40;
+  animation: moveFirstImg 6s infinite;
 }
 
 .auge-img-container img:nth-child(2) {
@@ -67,14 +68,8 @@
   top: 40%;
   left: 40%;
   z-index: 20;
+  animation: moveSecondImg 6s infinite;
 }
-
-.auge-img-container img:nth-child(4) {
-  top: 60%;
-  left: 60%;
-  z-index: 10;
-}
-
 
 .people-img-container {
   position: absolute;
@@ -88,6 +83,7 @@
   bottom: 0%;
   right: 40%;
   z-index: 30;
+  animation: moveThirdImg 6s infinite;
 }
 
 .people-img-container img:nth-child(2) {
@@ -98,8 +94,9 @@
 
 .people-img-container img:nth-child(3) {
   bottom: 40%;
-  right: 00%;
+  right: 0;
   z-index: 10;
+  animation: moveFourthImg 6s infinite;
 }
 
 
@@ -155,5 +152,65 @@
   }
   50%, 100% {
     opacity: 0;
+  }
+}
+
+@keyframes moveFirstImg {
+  0% {
+    top: 0;
+    left: 0;
+  }
+  25%, 50% {
+    top: 20%;
+    left: 20%;
+  }
+  75%, 100% {
+    top: 0;
+    left: 0;
+  }
+}
+
+@keyframes moveSecondImg {
+  0% {
+    top: 40%;
+    left: 40%;
+  }
+  25%, 50% {
+    top: 20%;
+    left: 20%;
+  }
+  75%, 100% {
+    top: 40%;
+    left: 40%;
+  }
+}
+
+@keyframes moveThirdImg {
+  0% {
+    bottom: 0;
+    right: 40%;
+  }
+  25%, 50% {
+    bottom: 20%;
+    right: 20%;
+  }
+  75%, 100% {
+    bottom: 0;
+    right: 40%;
+  }
+}
+
+@keyframes moveFourthImg {
+  0% {
+    bottom: 40%;
+    right: 0;
+  }
+  25%, 50% {
+    bottom: 20%;
+    right: 20%;
+  }
+  75%, 100% {
+    bottom: 40%;
+    right: 0;
   }
 }
