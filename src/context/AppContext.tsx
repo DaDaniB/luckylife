@@ -13,7 +13,7 @@ interface AppContextProps {
   currentSectionIndex: number;
   setCurrentSectionIndex: (index: number) => void;
   answers: Record<string, string>;
-  setAnswers: (answers: Record<string, string>) => void;
+  setAnswers: React.Dispatch<React.SetStateAction<Record<string, string>>>
   resetTimer: () => void;
   resetStateMachine: () => void;
 }
