@@ -3,11 +3,11 @@ import './SlotMachinePage.css';
 import { useAppContext } from '../context/AppContext';
 import BezierEasing from 'bezier-easing'
 
-import cherry from '../../imgs/CHERRY PIXEL.png'
-import seven from '../../imgs/7 PIXEL.png'
-import bar from '../../imgs/BAR PIXEL.png'
-import bell from '../../imgs/BELL PIXEL.png'
-import horse from '../../imgs/HORSE PIXEL.png'
+import cherry from '../../imgs/CHERRY PIXEL NEW.png'
+import seven from '../../imgs/7PIXEL NEW.png'
+import bar from '../../imgs/BAR PIXEL NEW.png'
+import bell from '../../imgs/BELL PIXEL NEW.png'
+import horse from '../../imgs/HORSEPIXEL NEW.png'
 import star from '../../imgs/STERN.svg'
 import ptsBtn from '../../imgs/PRESS TO SPIN.svg'
 import { KEY } from '../constants/animation';

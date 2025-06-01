@@ -3,8 +3,8 @@ import { useAppContext } from '../context/AppContext';
 import './StartPage.css';
 
 import titleSVG from '../../imgs/ZUGEFALLENES GLÜCK.svg'
-import AugeImg from '../../imgs/AUGEN.jpg'
-import PeopleImg from '../../imgs/RANDOM PEOPLE.jpg'
+import AugeImg from '../../imgs/AUGEN NEU.jpeg'
+import PeopleImg from '../../imgs/RANDOM PEOPLE NEU.png'
 import PTLSVG from '../../imgs/PLAY THROUGH LIFE.svg'
 import StarSVG from '../../imgs/STERN.svg'
 import { KEY } from '../constants/animation';
