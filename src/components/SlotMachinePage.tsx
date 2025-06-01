@@ -11,6 +11,7 @@ import horse from '../../imgs/HORSE PIXEL.png'
 import star from '../../imgs/STERN.svg'
 import ptsBtn from '../../imgs/PRESS TO SPIN.svg'
 import { KEY } from '../constants/animation';
+import spinSoundFile from '../../sound/SLOT MACHINE VERSION 1.wav'
 
 const IMAGES = [cherry, seven, bar, bell, horse];
 // const FINAL_IMAGE = '⭐';
@@ -39,6 +40,7 @@ interface WheelData {
 }
 
 const SlotMachinePage: React.FC = () => {
+    const spinSound = new Audio(spinSoundFile)
     const { setState, resetTimer } = useAppContext();
     const [wheels, setWheels] = useState<WheelData[]>([]);
     const animationRefs = useRef<(ReturnType<typeof requestAnimationFrame> | null)[]>([]);
@@ -115,21 +117,29 @@ const SlotMachinePage: React.FC = () => {
         setHasSpun(true);
         document.getElementById("spin-btn")?.classList.remove("spin-btn-toggle");
 
+        spinSound.currentTime = 0;
+        spinSound.play().catch(e => console.warn('Sound playing while spinning failed', e))
+
         wheels.forEach((_, index) => {
             setTimeout(() => {
                 animateWheel(index, SPIN_DURATION);
             }, index * STAGGER_DELAY);
         });
 
-        const delay = SPIN_DURATION + (STAGGER_DELAY * WHEEL_COUNT) + PAGE_SWITCH_DELAY;
-        setTimeout(() => setState('result'), delay);
+        const wheelSpinTime = SPIN_DURATION + (STAGGER_DELAY * WHEEL_COUNT)
+        const pageSwitchDelay = wheelSpinTime + PAGE_SWITCH_DELAY;
+        setTimeout(() => {
+            spinSound.pause();
+            spinSound.currentTime = 0
+        }, wheelSpinTime)
+        setTimeout(() => setState('result'), pageSwitchDelay);
     }, [resetTimer, hasSpun, wheels, setState]);
 
     useEffect(() => {
         if (wheels.length > 0) {
             const handleKeyPress = (event: KeyboardEvent) => {
                 if (event.key === KEY) {
-                    handleSpin(); 
+                    handleSpin();
                 }
             };
 
@@ -162,10 +172,20 @@ const SlotMachinePage: React.FC = () => {
                     </div>
                 ))}
             </div>
-            <button id='spin-btn' className='spin-btn spin-btn-toggle' onClick={handleSpin} disabled={wheels.some((w) => w.spinning)}>
-                <img src={ptsBtn} alt="press to spin" />
-            </button>
-            <img src={star} alt="stern" />
+
+
+            <div className="slot-star-wrapper">
+                <img className='slot-star-wrapper-item' src={star} alt="stern" />
+                <img className='slot-star-wrapper-item' src={star} alt="stern" />
+                <div className="slot-star-btn slot-star-wrapper-item">
+                    <button id='spin-btn' className='spin-btn spin-btn-toggle' onClick={handleSpin} disabled={wheels.some((w) => w.spinning)}>
+                        <img src={ptsBtn} alt="press to spin" />
+                    </button>
+                    <img src={star} alt="stern" ></img>
+                </div>
+
+            </div>
+
         </div>
     );
 };

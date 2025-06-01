@@ -8,13 +8,19 @@ import PeopleImg from '../../imgs/RANDOM PEOPLE.jpg'
 import PTLSVG from '../../imgs/PLAY THROUGH LIFE.svg'
 import StarSVG from '../../imgs/STERN.svg'
 import { KEY } from '../constants/animation';
+import startSoundFile from '../../sound/TITLE SCREEN.wav'
 
 const StartPage: React.FC = () => {
   const { setState, resetTimer } = useAppContext();
 
   useEffect(() => {
+    const startSound = new Audio(startSoundFile)
+    startSound.currentTime = 0;
+    startSound.play().catch(e => console.warn('start sound failed', e));
     const handleKeyPress = (event: KeyboardEvent) => {
       if (event.key === KEY) {
+        startSound.pause();
+        startSound.currentTime = 0;
         handleStart()
       }
     }
@@ -22,6 +28,8 @@ const StartPage: React.FC = () => {
     window.addEventListener('keydown', handleKeyPress);
 
     return () => {
+      startSound.pause();
+      startSound.currentTime = 0;
       window.removeEventListener('keydown', handleKeyPress)
     }
   })
@@ -41,7 +49,6 @@ const StartPage: React.FC = () => {
           <img src={AugeImg} alt="Eyes" />
           <img src={AugeImg} alt="Eyes" />
           <img src={AugeImg} alt="Eyes" />
-          <img src={AugeImg} alt="Eyes" />
         </div>
         <div className="people-img-container">
           <img src={PeopleImg} alt="People Walking" />
@@ -54,9 +61,9 @@ const StartPage: React.FC = () => {
           <img id='star-3' src={StarSVG} alt="Stern" />
           <img id='star-4' src={StarSVG} alt="Stern" />
         </div>
-        <p id="zcTEXT">zufallsbedingte chancenungleichheit</p>
-        <p id="woTEXT">which one???</p>
-        <p id="wjbdTEXT">wieviele jackpots brauchst du?</p>
+        <p className='small-text' id="zcTEXT">zufallsbedingte chancenungleichheit</p>
+        <p className='small-text' id="woTEXT">wieviele glücksfälle brauchst du?</p>
+        <p className='small-text' id="wjbdTEXT">im spiel des lebens</p>
       </div>
       <img className="ptl-img" src={PTLSVG} alt="play through life" />
 

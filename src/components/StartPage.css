@@ -18,6 +18,10 @@
   padding-top: 7%;
 }
 
+.small-text {
+  font-weight: 300;
+}
+
 .ptl-img {
   height: 9%;
   margin-top: 2%;
