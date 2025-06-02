@@ -24,7 +24,7 @@ html, body, #root {
 .slot-box {
   width: calc(100% - 4rem);
   height: calc(93% - 4rem);
-  margin: 2rem 2rem 1rem 2rem;
+  margin: 2rem 2rem 0rem 2rem;
   
   z-index: 1;
 }
