@@ -1,16 +1,16 @@
 .resultpage {
-  width: calc(100% - 8rem);
-  height: calc(100% - 8rem);
-  margin: 4rem;
+  width: calc(100% - 12rem);
+  height: calc(100% - 12rem);
+  margin: 6rem;
   padding: 0;
   position:absolute;
 }
 
 .title {
-  font-size: 3rem;
+  font-size: 5rem;
   text-transform: uppercase;
   font-family: "Pixelify Sans", sans-serif;
-}
+} 
 
 #result-next-btn {
   position: fixed;
@@ -19,7 +19,7 @@
 
 .answerbox {
   margin-top: 13vh;
-  font-size: 1.3rem;
+  font-size: 2rem;
   max-width: 60%;
   max-height: 50%;
   overflow-y: auto;
@@ -37,8 +37,8 @@
 
 .result-text-cursor {
   animation: blink 1s infinite;
-  width: 1.1rem;
-  height: 1.1rem;
+  width: 1.7rem;
+  height: 1.7rem;
   margin: 0;
   margin-left: -0.7rem;
   padding: 0;
@@ -64,15 +64,16 @@
 }
 
 .people-img-box {
-  height: 15rem;
-  width: 15rem;
+  height: 16rem;
+  width: 16rem;
   position: absolute;
   right: 0;
+  margin-right: 5%;
 }
 
 .people-img-box img:nth-child(1) {
   top: 0%;
-  right: 40%;
+  right: 0%;
 }
 
 .people-img-box img:nth-child(2) {
@@ -82,33 +83,33 @@
 
 .people-img-box img:nth-child(3) {
   top: 40%;
-  right: 0%;
+  right: 40%;
 }
 
 #result-star-1 {
-  top: 15%;
-  left: 9rem;
+  top: 19%;
+  left: 57.2%;
 }
 
 #result-star-2 {
-  top: 80%;
-  left: 9rem;
+  bottom: 19%;
+  left: 57.2%;
 }
 
 .star-img {
-  height: 2.5rem;
-  width: 2.5rem;
+  height: 3.5rem;
+  width: 3.5rem !important;
   
   position: absolute;
 }
 
 .progress-bar-container {
-  width: 60rem;
-  height: 2rem;
+  width: 80rem;
+  height: 4rem;
   margin: 0 auto;
   background-color: #e0e0e0;
   margin-bottom: 16px;
-  border-radius: 10px;
+  border-radius: 1.3rem;
   overflow: hidden;
   z-index: 999;
   position: fixed;

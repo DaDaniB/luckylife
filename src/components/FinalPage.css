@@ -11,7 +11,8 @@
 }
 
 .end-game-over {
-    width: 40%;
+    margin-top: 5rem;
+    width: 50%;
 }
 
 .end-text {
@@ -21,26 +22,28 @@
 
 .end-star-img {
     position: fixed;
+    width: 3.5rem;
+    height: 3.5rem;
 }
 
 #end-star-1 {
-    top: 4rem;
-    left: 4rem;
+    top: 2vw;
+    left: 2vw;
 }
 
 #end-star-2 {
-    top: 4rem;
-    right: 4rem;
+    top: 2vw;
+    right: 2vw;
 }
 
 #end-star-3 {
-    bottom: 4rem;
-    right: 4rem;
+    bottom: 2vw;
+    right: 2vw;
 }
 
 #end-star-4 {
-    bottom: 4rem;
-    left: 4rem;
+    bottom: 2vw;
+    left: 2vw;
 }
 
 @keyframes toggleVisibility {

@@ -181,7 +181,7 @@ const SlotMachinePage: React.FC = () => {
                     <button id='spin-btn' className='spin-btn spin-btn-toggle' onClick={handleSpin} disabled={wheels.some((w) => w.spinning)}>
                         <img src={ptsBtn} alt="press to spin" />
                     </button>
-                    <img src={star} alt="stern" ></img>
+                    <img className='slot-star-wrapper-item' src={star} alt="stern" ></img>
                 </div>
 
             </div>

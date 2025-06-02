@@ -3,7 +3,7 @@ import type { ReactNode } from 'react'
 import { RESET_KEY } from '../constants/animation';
 
 
-const TIMEOUT = 60000000
+const TIMEOUT = 60000
 
 type AppState = 'start' | 'slot' | 'result' | 'final';
 

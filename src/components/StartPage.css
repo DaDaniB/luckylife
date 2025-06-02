@@ -14,12 +14,13 @@
 }
 
 .title-img {
-  width: 40%;
+  width: 47%;
   padding-top: 7%;
 }
 
 .small-text {
   font-weight: 300;
+  font-size: 2rem;
 }
 
 .ptl-img {
@@ -47,8 +48,8 @@
   position: absolute;
   top: 10%;
   left: 10%;
-  width: 10rem;
-  height: 10rem;
+  width: 15rem;
+  height: 15rem;
 }
 
 .auge-img-container img:nth-child(1) {
@@ -75,8 +76,8 @@
   position: absolute;
   bottom: 10%;
   right: 10%;
-  width: 10rem;
-  height: 10rem;
+  width: 15rem;
+  height: 15rem;
 }
 
 .people-img-container img:nth-child(1) {
@@ -106,44 +107,44 @@
 }
 
 .star-img-container img {
-  width: 2.5rem;
-  height: 2.5rem;
+  height: 3.5rem;
+  width: 3.5rem;
 }
 
 .star-img-container img:nth-child(1) {
-  top: 3%;
-  left: 3%;
+  top: 2vw;
+  left: 2vw;
 }
 
 .star-img-container img:nth-child(2) {
-  top: 3%;
-  right: 3%;
+  top: 2vw;
+  right: 2vw;
 }
 
 .star-img-container img:nth-child(3) {
-  bottom: 3%;
-  right: 3%;
+  bottom: 2vw;
+  right: 2vw;
 }
 
 .star-img-container img:nth-child(4) {
-  bottom: 3%;
-  left: 3%;
+  bottom: 2vw;
+  left: 2vw;
 }
 
 #zcTEXT {
   width: 13rem;
-  top: 17%;
-  left: 64%;
+  top: 23%;
+  left: 61%;
 }
 
 #woTEXT {
   top: 65%;
-  left: 10%;
+  left: 8.5%;
 }
 
 #wjbdTEXT {
   top: 85%;
-  left: 50.5%;
+  left: 55.5%;
 }
 
 @keyframes toggleVisibility {
