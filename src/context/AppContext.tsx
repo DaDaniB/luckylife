@@ -39,6 +39,8 @@ export const AppProvider: React.FC<AppProviderProps> = ({ children }) => {
 
   // ⏳ Reset function
   const resetStateMachine = () => {
+    if (state === 'slot') return;
+
     setState('start');
     setCurrentSectionIndex(0);
     setAnswers({});
