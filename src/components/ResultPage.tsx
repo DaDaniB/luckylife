@@ -41,6 +41,8 @@ const ResultPage: React.FC = () => {
   const progress = (currentSectionIndex / totalSections) * 100;
 
   useEffect(() => {
+    if (isHandlingNext) return;
+
     const filtered = getFilteredAnswers(currentSectionIndex, answers);
     let resultList: DisplayedText[] = [];
 
@@ -135,7 +137,7 @@ const ResultPage: React.FC = () => {
   const handleNext = () => {
     if (currentSectionIndex < decisionData.sections.length - 1 && !isEndEarly) {
       setState('slot');
-        setCurrentSectionIndex(currentSectionIndex + 1);
+      setCurrentSectionIndex(currentSectionIndex + 1);
     } else {
       setState('final');
     }
