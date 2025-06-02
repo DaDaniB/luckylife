@@ -51,6 +51,7 @@
   border-radius: 5px;
   cursor: pointer;
   position: relative;
+  margin: auto;
   margin-right: 1rem;
   background-color: #fafafa;
 }
