@@ -33,6 +33,7 @@ const ResultPage: React.FC = () => {
   const [displayIndex, setDisplayIndex] = useState(0);
   const [isTyping, setIsTyping] = useState(false);
   const [isEndEarly, setIsEndEarly] = useState(false);
+  const [isHandlingNext, setIsHandlingNext] = useState(false);
   const shownAllQARef = useRef(false);
   const answerBoxRef = useRef<HTMLDivElement>(null)
 
@@ -50,6 +51,9 @@ const ResultPage: React.FC = () => {
         resultList.push({ question: q.question, answer: a.answer, isEnd: a.endflow ?? false });
       }
     });
+    console.log('curr section indesx' + currentSectionIndex)
+    console.log(resultList)
+
     resultList = handleEarlyEnding(resultList)
     setFullAnswerList(resultList);
   }, [currentSectionIndex]);
@@ -97,7 +101,8 @@ const ResultPage: React.FC = () => {
   useEffect(() => {
     const handleKeyPress = (event: KeyboardEvent) => {
       resetTimer();
-      if (event.key === KEY && shownAllQARef.current) {
+      if (event.key === KEY && shownAllQARef.current && !isHandlingNext) {
+        setIsHandlingNext(true);
         handleNext();
       }
     };
@@ -128,9 +133,9 @@ const ResultPage: React.FC = () => {
   }
 
   const handleNext = () => {
-    if (currentSectionIndex + 1 < decisionData.sections.length && !isEndEarly) {
-      setCurrentSectionIndex(currentSectionIndex + 1);
+    if (currentSectionIndex < decisionData.sections.length - 1 && !isEndEarly) {
       setState('slot');
+        setCurrentSectionIndex(currentSectionIndex + 1);
     } else {
       setState('final');
     }
