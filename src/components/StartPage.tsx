@@ -16,6 +16,7 @@ const StartPage: React.FC = () => {
   useEffect(() => {
     const startSound = new Audio(startSoundFile)
     startSound.currentTime = 0;
+    startSound.loop = true;
     startSound.play().catch(e => console.warn('start sound failed', e));
     const handleKeyPress = (event: KeyboardEvent) => {
       if (event.key === KEY) {

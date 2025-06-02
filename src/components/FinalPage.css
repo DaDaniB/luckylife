@@ -18,6 +18,7 @@
 .end-text {
     width: 40%;
     animation: toggleVisibility 1s infinite;
+    margin-top: -4rem;
 }
 
 .end-star-img {

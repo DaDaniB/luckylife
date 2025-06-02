@@ -46,7 +46,7 @@
 
 .auge-img-container {
   position: absolute;
-  top: 10%;
+  top: 12%;
   left: 10%;
   width: 15rem;
   height: 15rem;
@@ -139,12 +139,12 @@
 
 #woTEXT {
   top: 65%;
-  left: 8.5%;
+  left: 8.7%;
 }
 
 #wjbdTEXT {
   top: 85%;
-  left: 55.5%;
+  left: 55.3%;
 }
 
 @keyframes toggleVisibility {
