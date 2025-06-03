@@ -9,6 +9,13 @@ import star from '../../imgs/STERN.svg';
 import { KEY } from '../constants/animation';
 import cursor from '../../imgs/cursor.png'
 
+
+import firstImg from '../../imgs/7PIXEL NEW.png'
+import secondImg from '../../imgs/BAR PIXEL NEW.png'
+import thirdImg from '../../imgs/CHERRY PIXEL NEW.png'
+
+const randImgs = [firstImg, secondImg, thirdImg]
+
 const decisionData: DecisionTree = decisionDataRaw;
 
 interface DisplayedText {
@@ -41,11 +48,14 @@ const ResultPage: React.FC = () => {
 
   const totalSections = decisionData.sections.length;
   const progress = (currentSectionIndex / totalSections) * 100;
+  const [shownImg, setShownImg] = useState("e");
 
   useEffect(() => {
     if (hasRunGetAnswersRef.current) return;
     hasRunGetAnswersRef.current = true;
     if (isHandlingNext) return;
+
+    setShownImg(randImgs[Math.floor(Math.random() * randImgs.length)])
 
     const filtered = getFilteredAnswers(currentSectionIndex, answers);
     let resultList: DisplayedText[] = [];
@@ -181,9 +191,9 @@ const ResultPage: React.FC = () => {
 
       <div className="img-box">
         <div className="people-img-box">
-          <img className='people-img' src={peopleImg} alt="random people" />
-          <img className='people-img' src={peopleImg} alt="random people" />
-          <img className='people-img' src={peopleImg} alt="random people" />
+          <img className='people-img' src={shownImg} alt="random people" />
+          <img className='people-img' src={shownImg} alt="random people" />
+          <img className='people-img' src={shownImg} alt="random people" />
         </div>
 
         <img id="result-star-1" className='star-img' src={star} alt="stern" />
