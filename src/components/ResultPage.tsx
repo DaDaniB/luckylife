@@ -10,11 +10,11 @@ import { KEY } from '../constants/animation';
 import cursor from '../../imgs/cursor.png'
 
 
-import firstImg from '../../imgs/WIPPE NEU.png'
+import firstImg from '../../imgs/WIPPE FINAL.png'
 import secondImg from '../../imgs/WÜRFEL NEU.png'
-import thirdImg from '../../imgs/CHERRY PIXEL NEW.png'
+import thirdImg from '../../imgs/LEITERN PIC FINAL.png'
 
-const randImgs = [firstImg, secondImg]
+const randImgs = [firstImg, secondImg, thirdImg]
 
 const decisionData: DecisionTree = decisionDataRaw;
 
