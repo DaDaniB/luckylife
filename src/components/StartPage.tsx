@@ -8,7 +8,7 @@ import PeopleImg from '../../imgs/RANDOM PEOPLE NEU.png'
 import PTLSVG from '../../imgs/PLAY THROUGH LIFE.svg'
 import StarSVG from '../../imgs/STERN.svg'
 import { KEY } from '../constants/animation';
-import startSoundFile from '../../sound/TITLE SCREEN.wav'
+import startSoundFile from '../../sound/TITLE SCREEN NEU.wav'
 
 const StartPage: React.FC = () => {
   const { setState, resetTimer } = useAppContext();

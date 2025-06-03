@@ -5,6 +5,7 @@ import star from '../../imgs/STERN.svg'
 import gameOver from '../../imgs/GAME OVER.svg'
 import { useAppContext } from '../context/AppContext';
 import { KEY } from '../constants/animation';
+import gameOverSoundFile from '../../sound/GAME OVER.wav'
 
 const FinalPage: React.FC = () => {
   const { resetStateMachine } = useAppContext()
@@ -15,11 +16,17 @@ const FinalPage: React.FC = () => {
         resetStateMachine()
       }
     }
-
     window.addEventListener('keydown', handleKeyPress);
+
+    const gameOverSound = new Audio(gameOverSoundFile);
+    gameOverSound.currentTime = 0;
+    gameOverSound.loop = true;
+    gameOverSound.play().catch(e => console.log(e))
 
     return () => {
       window.removeEventListener('keydown', handleKeyPress)
+      gameOverSound.pause()
+      gameOverSound.currentTime = 0;
     }
   })
 

@@ -11,16 +11,16 @@ import horse from '../../imgs/HORSEPIXEL NEW.png'
 import star from '../../imgs/STERN.svg'
 import ptsBtn from '../../imgs/PRESS TO SPIN.svg'
 import { KEY } from '../constants/animation';
-import spinSoundFile from '../../sound/SLOT MACHINE VERSION 1.wav'
+import spinSoundFile from '../../sound/SLOT MACHINE NEU.wav'
 
 const IMAGES = [cherry, seven, bar, bell, horse];
 // const FINAL_IMAGE = '⭐';
 const WHEEL_COUNT = 5;
 const IMAGES_PER_WHEEL = 30;
 
-const SPIN_DURATION = 3000;
-const STAGGER_DELAY = 200;
-const PAGE_SWITCH_DELAY = 2000
+const SPIN_DURATION = 3500;
+const STAGGER_DELAY = 400;
+const PAGE_SWITCH_DELAY = 2500
 const DISPLAYED_IMAGES_COUNT = 3
 const DISPLAYED_IMAGE_HEIGHT = (1 / DISPLAYED_IMAGES_COUNT) * 100 // 0.3 -> 30...%
 
@@ -131,7 +131,7 @@ const SlotMachinePage: React.FC = () => {
         setTimeout(() => {
             spinSound.pause();
             spinSound.currentTime = 0
-        }, wheelSpinTime)
+        }, pageSwitchDelay)
         setTimeout(() => setState('result'), pageSwitchDelay);
     }, [resetTimer, hasSpun, wheels, setState]);
 
