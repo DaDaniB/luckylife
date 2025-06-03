@@ -36,11 +36,15 @@ const ResultPage: React.FC = () => {
   const [isHandlingNext, setIsHandlingNext] = useState(false);
   const shownAllQARef = useRef(false);
   const answerBoxRef = useRef<HTMLDivElement>(null)
+  const hasRunGetAnswersRef = useRef(false) // used to stop double useEffect trigger in dev
+
 
   const totalSections = decisionData.sections.length;
   const progress = (currentSectionIndex / totalSections) * 100;
 
   useEffect(() => {
+    if (hasRunGetAnswersRef.current) return;
+    hasRunGetAnswersRef.current = true;
     if (isHandlingNext) return;
 
     const filtered = getFilteredAnswers(currentSectionIndex, answers);
@@ -61,6 +65,7 @@ const ResultPage: React.FC = () => {
   }, [currentSectionIndex]);
 
   useEffect(() => {
+
     if (displayIndex < fullAnswerList.length) {
       const nextQA = fullAnswerList[displayIndex];
       const fullText = `${nextQA.answer}`;
@@ -127,6 +132,8 @@ const ResultPage: React.FC = () => {
     for (let answer of answers) {
       results.push(answer)
       if (answer.isEnd) {
+        console.log('answer is early ending: ')
+        console.log(answer)
         setIsEndEarly(true);
         return results;
       }
