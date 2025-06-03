@@ -10,15 +10,15 @@ import { KEY } from '../constants/animation';
 import cursor from '../../imgs/cursor.png'
 
 
-import firstImg from '../../imgs/7PIXEL NEW.png'
-import secondImg from '../../imgs/BAR PIXEL NEW.png'
+import firstImg from '../../imgs/WIPPE NEU.png'
+import secondImg from '../../imgs/WÜRFEL NEU.png'
 import thirdImg from '../../imgs/CHERRY PIXEL NEW.png'
 
-const randImgs = [firstImg, secondImg, thirdImg]
+const randImgs = [firstImg, secondImg]
 
 const decisionData: DecisionTree = decisionDataRaw;
 
-interface DisplayedText {
+export interface DisplayedText {
   question: string;
   answer: string;
   isEnd: boolean;
@@ -61,10 +61,8 @@ const ResultPage: React.FC = () => {
     let resultList: DisplayedText[] = [];
 
     filtered.forEach((q) => {
-      const i = Math.floor(Math.random() * q.answers.length);
-      const a = q.answers[i];
-      if (a) {
-        resultList.push({ question: q.question, answer: a.answer, isEnd: a.endflow ?? false });
+      if (q && q.question !== "") {
+        resultList.push(q);
       }
     });
     console.log('curr section indesx' + currentSectionIndex)
