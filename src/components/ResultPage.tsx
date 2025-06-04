@@ -13,6 +13,7 @@ import cursor from '../../imgs/cursor.png'
 import firstImg from '../../imgs/WIPPE FINAL.png'
 import secondImg from '../../imgs/WÜRFEL NEU.png'
 import thirdImg from '../../imgs/LEITERN PIC FINAL.png'
+import cubesFin from '../../imgs/CUBES FINALAMENTE 2.jpg'
 
 const randImgs = [firstImg, secondImg, thirdImg]
 
@@ -189,9 +190,9 @@ const ResultPage: React.FC = () => {
 
       <div className="img-box">
         <div className="people-img-box">
-          <img className='people-img' src={shownImg} alt="random people" />
-          <img className='people-img' src={shownImg} alt="random people" />
-          <img className='people-img' src={shownImg} alt="random people" />
+          <img className='people-img' src={cubesFin} alt="random people" />
+          <img className='people-img' src={cubesFin} alt="random people" />
+          <img className='people-img' src={cubesFin} alt="random people" />
         </div>
 
         <img id="result-star-1" className='star-img' src={star} alt="stern" />
